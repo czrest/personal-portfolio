@@ -12,7 +12,7 @@ export default function LoadingScreen({ state = true, progress, finish }) {
       <div
         className={`${
           !loadingFinished ? "top-0" : "custom-loadingTop"
-        } ease-in duration-1000 flex flex-col justify-end fixed z-50 w-screen h-1/2 items-center p-1 custom-bg text-black`}
+        } ease-out duration-1000 flex flex-col justify-end fixed z-50 w-screen h-1/2 items-center p-1 custom-bg text-black`}
       >
         <div className={`pointer-events-none z-20 flex items-center`}>
           <p className={`font-codecl swing-in-bottom-fwd`}>
@@ -35,7 +35,7 @@ export default function LoadingScreen({ state = true, progress, finish }) {
       <div
         className={`pointer-events-auto ${
           !loadingFinished ? "bottom-0" : "custom-loadingBottom"
-        } ease-in duration-1000 flex flex-col justify-start fixed z-50 w-screen h-1/2 items-center custom-bg text-black`}
+        } ease-out duration-1000 flex flex-col justify-start fixed z-50 w-screen h-1/2 items-center custom-bg text-black`}
       >
         <div
           className={`h-full container mt-5 ease-out duration-500 delay-1000 w-60`}
