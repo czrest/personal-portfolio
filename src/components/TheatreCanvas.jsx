@@ -69,7 +69,7 @@ export default function TheatreCanvas() {
         <Suspense fallback={null}>
           <ScrollControls
             pages={8}
-            distance={1.5}
+            distance={1}
             damping={0.5}
             maxSpeed={0.8}
             horizontal
@@ -79,11 +79,11 @@ export default function TheatreCanvas() {
               <Scene />
 
               <EffectComposer disableNormalPass multisampling={4}>
-                {/* <Bloom
+                <Bloom
                   luminanceThreshold={0.7}
                   luminanceSmoothing={1.55}
                   height={300}
-                /> */}
+                />
                 <TiltShift2 blur={0.05} />
               </EffectComposer>
 
