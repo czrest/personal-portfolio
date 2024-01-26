@@ -26,7 +26,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log(planeloaded + " " + worldloaded)
 
     const outerTransitionTimer = setTimeout(() => {
       if (planeloaded && worldloaded) {
