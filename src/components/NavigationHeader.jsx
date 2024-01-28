@@ -2,7 +2,12 @@ import Header from "./Header";
 import NavigationMenu from "./NavigationMenu";
 import { useAtom } from "jotai";
 
-import { currentPageAtom, currentSceneAtom, scrollToPageAtom, isButtonPressed } from "../GlobalState";
+import {
+  currentPageAtom,
+  currentSceneAtom,
+  scrollToPageAtom,
+  isButtonPressed,
+} from "../GlobalState";
 import CinematicBar from "./CinematicBar";
 
 export default function NavigationHeader() {
@@ -12,7 +17,7 @@ export default function NavigationHeader() {
   const [scrollToPage, setScrollToPage] = useAtom(scrollToPageAtom);
   const [buttonPressed, setButtonPressed] = useAtom(isButtonPressed);
 
-  function goToPage(selectedPage){
+  function goToPage(selectedPage) {
     setScrollToPage(selectedPage);
     setButtonPressed((prev) => !prev);
   }
@@ -28,16 +33,34 @@ export default function NavigationHeader() {
 
   return (
     <>
+      <div className="flex justify-center overflow-hidden">
+        <CinematicBar
+          customClassName={`${
+            shouldAnimateCinematic
+              ? "ease-in duration-700 blur-2xl"
+              : "ease-out duration-700 blur-none"
+          } pointer-events-none`}
+          animateCinematic={shouldAnimateCinematic}
+        />
+      </div>
       <Header
-        customClassName={`${shouldAnimateCinematic ? "bg-opacity-70 ease-in duration-700" : "bg-opacity-0 ease-out duration-700"}`}
-        customClassHeader={`${shouldAnimateCinematic ? "top-6 ease-in duration-700" : "top-14 ease-out duration-700"}`}
+        customClassName={`${
+          shouldAnimateCinematic
+            ? "bg-opacity-70 ease-in duration-700"
+            : "bg-opacity-0 ease-out duration-700"
+        }`}
+        customClassHeader={`${
+          shouldAnimateCinematic
+            ? "top-6 ease-in duration-700"
+            : "top-14 ease-out duration-700"
+        }`}
       >
         <NavigationMenu
           customClassName={`${
             activePage1
-              ? "active2 text-yellow-400 bg-black hover:bg-black"
-              : "hover:bg-white hover:text-black text-white"
-          } font-codecl`}
+              ? "text-lime-400 bg-black hover:bg-black font-codecl"
+              : "hover:bg-white hover:text-black text-white font-codecr"
+          }`}
           onClick={() => goToPage("welcome")}
         >
           Samuel Torreda
@@ -45,8 +68,8 @@ export default function NavigationHeader() {
         <NavigationMenu
           customClassName={`${
             activePage2
-              ? "active2 text-yellow-400 bg-black hover:bg-black"
-              : "hover:bg-white hover:text-black text-white"
+              ? "text-lime-400 bg-black hover:bg-black font-codecl"
+              : "hover:bg-white hover:text-black text-white font-codecr"
           } `}
           onClick={() => goToPage("projects")}
         >
@@ -55,8 +78,8 @@ export default function NavigationHeader() {
         <NavigationMenu
           customClassName={`${
             activePage3
-              ? "active2 text-yellow-400 bg-black hover:bg-black"
-              : "hover:bg-white hover:text-black text-white"
+              ? "text-lime-400 bg-black hover:bg-black font-codecl"
+              : "hover:bg-white hover:text-black text-white font-codecr"
           } `}
           onClick={() => goToPage("about")}
         >
@@ -65,8 +88,8 @@ export default function NavigationHeader() {
         <NavigationMenu
           customClassName={`${
             activePage4
-              ? "active2 text-yellow-400 bg-black hover:bg-black"
-              : "hover:bg-white hover:text-black text-white"
+              ? "text-lime-400 bg-black hover:bg-black font-codecl"
+              : "hover:bg-white hover:text-black text-white font-codecr"
           } `}
           onClick={() => goToPage("skills")}
         >
@@ -75,8 +98,8 @@ export default function NavigationHeader() {
         <NavigationMenu
           customClassName={`${
             activePage5
-              ? "active2 text-yellow-400 bg-black hover:bg-black"
-              : "hover:bg-white hover:text-black text-white"
+              ? "text-lime-400 bg-black hover:bg-black font-codecl"
+              : "hover:bg-white hover:text-black text-white font-codecr"
           } `}
           onClick={() => goToPage("education")}
         >
@@ -85,8 +108,8 @@ export default function NavigationHeader() {
         <NavigationMenu
           customClassName={`${
             activePage6
-              ? "active2 text-yellow-400 bg-black hover:bg-black"
-              : "hover:bg-white hover:text-black text-white"
+              ? "text-lime-400 bg-black hover:bg-black font-codecl"
+              : "hover:bg-white hover:text-black text-white font-codecr"
           } `}
           onClick={() => goToPage("contact")}
         >

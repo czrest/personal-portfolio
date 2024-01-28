@@ -6,10 +6,10 @@ export default function Header({
 
   return (
     <header
-      className={`fixed w-screen flex justify-center z-20 h-14 ${customClassHeader}`}
+      className={`pointer-events-none fixed w-screen flex justify-center z-20 h-14 ${customClassHeader}`}
     >
       <ul
-        className={`flex flex-row w-fit rounded-full bg-black h-full p-2 ${customClassName}`}
+        className={`pointer-events-auto flex flex-row w-fit rounded-full bg-black h-full p-2 ${customClassName}`}
       >
         {children}
       </ul>

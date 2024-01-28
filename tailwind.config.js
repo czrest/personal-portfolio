@@ -6,11 +6,22 @@ module.exports = {
       height: {
         '7/100': '7%',
       },
-      fontFamily:{
+      fontFamily: {
         codecl: ['codecl', 'sans'],
+        codecr: ['codecr', 'sans'],
+        codecb: ['codecb', 'sans'],
+        codech: ['codech', 'sans'],
+      },
+      fontSize: {
+        'body-lg': '1rem',
+        'body': '.875rem',
+      },
+      colors: {
+        'custom-brown': '#5b4b45',
+        'custom-light': '#fffaef',
       },
       width: {
-        '201/2': '100.5%',
+        '6/5': '120%',
       }
     },
   },
