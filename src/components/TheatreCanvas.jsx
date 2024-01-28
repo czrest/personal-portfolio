@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
   Environment,
@@ -53,6 +53,7 @@ import Paper from "../modelcomps/Plane";
 import SectionHtml from "./SectionHtml";
 import PaperWorld from "../modelcomps/Paperworld";
 import paperAnimation from "../paperAnimation.json";
+import ContactPage from "./ContactPage";
 
 export default function TheatreCanvas() {
   const sheet = getProject("Project Animation", {
@@ -61,10 +62,17 @@ export default function TheatreCanvas() {
 
   const [currentScene] = useAtom(currentSceneAtom);
 
-  const shouldAnimateScene1 = currentScene === 1;
+  const [planeLoaded] = useAtom(planeLoadedAtom);
 
   return (
     <>
+      {planeLoaded && (
+        <>
+          <div className="relative">
+            <ContactPage/>
+          </div>
+        </>
+      )}
       <Canvas gl={{ preserveDrawingBuffer: true }} shadows>
         <Suspense fallback={null}>
           <ScrollControls
@@ -78,14 +86,14 @@ export default function TheatreCanvas() {
             <SheetProvider sheet={sheet}>
               <Scene />
 
-              <EffectComposer disableNormalPass multisampling={4}>
+              {/* <EffectComposer disableNormalPass multisampling={4}>
                 <Bloom
                   luminanceThreshold={0.7}
                   luminanceSmoothing={1.55}
                   height={300}
                 />
                 <TiltShift2 blur={0.05} />
-              </EffectComposer>
+              </EffectComposer> */}
 
               <Preload all />
             </SheetProvider>

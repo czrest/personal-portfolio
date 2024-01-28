@@ -42,7 +42,7 @@ export default function LoadingScreen({ state = true, progress, finish }) {
         >
           <div className="progress-bar w-full h-full flex justify-center">
             <button
-              className={`${finish} ${progress} duration-700 progress-bar-fill hover:bg-yellow-400 font-codecl border-black overflow-hidden`}
+              className={`${finish} ${progress} duration-700 progress-bar-fill hover:bg-custom-brown font-codecl border-black rounded-xl hover:text-white hover:border-custom-brown overflow-hidden`}
               onClick={() => clickListener()}
               disabled={state}
             >
