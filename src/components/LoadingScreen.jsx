@@ -12,7 +12,7 @@ export default function LoadingScreen({ state = true, progress, finish }) {
       <div
         className={`${
           !loadingFinished ? "top-0" : "custom-loadingTop"
-        } ease-out duration-1000 flex flex-col justify-end fixed z-50 w-screen h-1/2 items-center p-1 custom-bg text-black`}
+        } ease-out duration-1000 flex flex-col justify-end fixed z-50 w-screen h-1/2 items-center p-1 bg-primary text-accent1`}
       >
         <div className={`pointer-events-none z-20 flex items-center`}>
           <p className={`font-codecl swing-in-bottom-fwd`}>
@@ -34,15 +34,15 @@ export default function LoadingScreen({ state = true, progress, finish }) {
 
       <div
         className={`pointer-events-auto ${
-          !loadingFinished ? "bottom-0" : "custom-loadingBottom"
-        } ease-out duration-1000 flex flex-col justify-start fixed z-50 w-screen h-1/2 items-center custom-bg text-black`}
+          !loadingFinished ? "bottom-0 blur-none" : "custom-loadingBottom blur-xl"
+        } ease-out duration-1000 flex flex-col justify-start fixed z-50 w-screen h-1/2 items-center bg-primary text-accent1`}
       >
         <div
           className={`h-full container mt-5 ease-out duration-500 delay-1000 w-60`}
         >
           <div className="progress-bar w-full h-full flex justify-center">
             <button
-              className={`${finish} ${progress} duration-700 progress-bar-fill hover:bg-custom-brown font-codecl border-black rounded-xl hover:text-white hover:border-custom-brown overflow-hidden`}
+              className={`${finish} ${progress} duration-200 progress-bar-fill hover:bg-secondary font-codecl border-black hover:text-accent-2 hover:border-secondary overflow-hidden`}
               onClick={() => clickListener()}
               disabled={state}
             >

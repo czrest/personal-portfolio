@@ -8,12 +8,12 @@ export default function WireframeOpt({ strokeOpacity, fillOpacity, thickness }) 
         squeezeMin={0.2}
         squeezeMax={1}
         fillMix={1}
-        fill={"#fffaef"}
+        fill={"#FFFFF7"}
         fillOpacity={fillOpacity}
-        stroke={"#5b4b45"}
+        stroke={"#3b3b35"}
         thickness={thickness}
         strokeOpacity={strokeOpacity}
-        backfaceStroke={"#dfcbc9"}
+        backfaceStroke={"#3b3b35"}
       />
     </>
   );

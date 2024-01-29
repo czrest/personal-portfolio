@@ -17,8 +17,13 @@ module.exports = {
         'body': '.875rem',
       },
       colors: {
-        'custom-brown': '#5b4b45',
-        'custom-light': '#fffaef',
+        accent: {
+          1: "hsl(var(--color-accent1) / <alpha-value>)",
+          2: "hsl(var(--color-accent2) / <alpha-value>)",
+          3: "hsl(var(--color-accent3) / <alpha-value>)",
+        },
+        primary: "hsl(var(--color-primary) / <alpha-value>)",
+        secondary: "hsl(var(--color-secondary) / <alpha-value>)",
       },
       width: {
         '6/5': '120%',

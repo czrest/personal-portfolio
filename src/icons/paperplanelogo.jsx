@@ -2,7 +2,6 @@ export default function PaperPlaneLogo({ ...props }) {
   return (
     <>
       <svg viewBox="0 0 1000 1000" {...props}>
-        <rect x="7.5" y="7.5" className="bg-black opacity-70" width="985" height="985" />
         <g>
           <polygon
             className="st1"

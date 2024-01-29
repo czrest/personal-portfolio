@@ -22,31 +22,27 @@ export default function ContactPage() {
   }
 
   const [tooltipContent, setTooltipContent] = useState("Copy to clipboard");
-  const [tooltipColor, setTooltipColor] = useState("bg-black");
+  const [tooltipColor, setTooltipColor] = useState("bg-accent-1");
 
   const handleButtonClick = () => {
     // Change tooltip content when button is clicked
     setTooltipContent("Saved to clipboard");
-    setTooltipColor("bg-lime-400 text-black");
+    setTooltipColor("bg-accent-3 text-accent-1");
   };
 
   const handleTooltipHover = () => {
     // Reset tooltip content when hovered again
     setTooltipContent("Copy to clipboard");
-    setTooltipColor("bg-black");
+    setTooltipColor("bg-accent-1 text-accent-2");
   };
   return (
     <>
       <ContentContainer
-        customClassName="pointer-events-none absolute z-10 w-screen h-screen flex flex-col justify-center items-center"
+        customClassName="pointer-events-none absolute z-10 text-accent-1 w-screen h-screen flex flex-col justify-center items-center"
         shouldAnimate={shouldAnimateContact}
       >
         <div className="absolute bottom-10 left-10">
           <h2 className="font-codech text-xl">© 2024 Samuel Torreda</h2>
-        </div>
-
-        <div className="absolute top-6 left-10">
-            <PaperPlaneLogo height={"56px"} width={"56px"}/>
         </div>
 
         <div>
@@ -55,7 +51,7 @@ export default function ContactPage() {
 
         <Tooltip
           content={tooltipContent}
-          className={`${tooltipColor} p-1 rounded-lg`}
+          className={`${tooltipColor} p-1 rounded-md`}
           placement="right"
           animate={{
             mount: { scale: 1, x: 0 },
@@ -66,16 +62,16 @@ export default function ContactPage() {
             onClick={() => copyToClipboard()}
             onMouseEnter={() => handleTooltipHover()}
             variant="outlined"
-            className={`flex items-center group mt-5 ${
+            className={`flex items-center group mt-10 ${
               shouldAnimateContact
                 ? "pointer-events-auto"
                 : "pointer-events-none"
-            } group lowercase font-codecl border-black p-2 rounded-xl hover:text-white hover:bg-custom-brown hover:border-custom-brown`}
+            } group lowercase font-codecl border-black rounded-none p-3 text-accent-1 hover:text-accent-2 hover:bg-secondary hover:border-secondary`}
           >
             <EmailIcon
               height={"25px"}
               width={"25px"}
-              className={`fill-black mr-3 group-hover:fill-custom-light`}
+              className={`fill-accent-1 mr-3 group-hover:fill-primary`}
             />
             sam_torreda@yahoo.com
           </Button>
@@ -94,7 +90,7 @@ export default function ContactPage() {
             <MessengerIcon
               height={"40px"}
               width={"40px"}
-              className={`fill-black mr-3 group-hover:fill-custom-brown p-1 rounded-xl duration-500`}
+              className={`fill-accent-1 mr-3 group-hover:fill-secondary p-1 rounded-xl duration-500`}
             />
             <Links
               customClassName={`text-lg font-codecl`}
@@ -114,7 +110,7 @@ export default function ContactPage() {
             <LinkedinIcon
               height={"40px"}
               width={"40px"}
-              className={`fill-black mr-3 group-hover:fill-custom-brown p-1 rounded-xl duration-500`}
+              className={`fill-accent-1 mr-3 group-hover:fill-secondary p-1 rounded-xl duration-500`}
             />
             <Links
               customClassName={`text-lg font-codecl`}
@@ -134,7 +130,7 @@ export default function ContactPage() {
             <GithubIcon
               height={"40px"}
               width={"40px"}
-              className={`fill-black mr-3 group-hover:fill-custom-brown p-1 rounded-xl duration-500`}
+              className={`fill-accent-1 mr-3 group-hover:fill-secondary p-1 rounded-xl duration-500`}
             />
             <Links
               customClassName={`text-lg font-codecl`}

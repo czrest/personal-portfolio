@@ -1,8 +1,7 @@
 import { useScroll, Scroll } from "@react-three/drei";
 import { useRef, useEffect } from "react";
 import { useAtom } from "jotai";
-
-import CinematicBar from "./CinematicBar";
+import { motion, useSpring } from "framer-motion";
 
 import {
   scrollToPageAtom,
@@ -37,6 +36,13 @@ export default function SectionHtml() {
       behavior: "smooth",
     });
   };
+
+  // const data = useScroll();
+  // const scaleX = useSpring(scrollYProgress, {
+  //   stiffness: 100,
+  //   damping: 30,
+  //   restDelta: 0.001,
+  // });
 
   useEffect(() => {
     scrollToRef(sections[scrollToPage]);
@@ -79,15 +85,15 @@ export default function SectionHtml() {
           </section>
           <section
             ref={sections.skills}
-            className="w-screen h-screen py-40 px-10 bg-black text-white z-50 flex items-center justify-center"
+            className="w-screen h-screen py-40 px-10 bg-black z-50 flex items-center justify-center"
           >
-            <div className="grid grid-cols-2 gap-y-10 gap-x-44 w-10/12 text-white bg-black">
+            <div className="grid grid-cols-2 gap-y-10 gap-x-44 w-10/12 text-accent-2">
               <ContentContainer
                 customClassName={`flex flex-col items-start `}
                 shouldAnimate={shouldAnimateSkills1}
               >
                 <div className="w-11/12">
-                  <h1 className="font-codecr text-5xl text-lime-400">
+                  <h1 className="font-codecr text-5xl text-accent-3">
                     What I can do.
                   </h1>
                   <p className="whitespace-pre-line font-codecl text-lg">
@@ -114,7 +120,7 @@ export default function SectionHtml() {
                 shouldAnimate={shouldAnimateSkills1}
               >
                 <div className="w-11/12">
-                  <h1 className=" font-codecr text-5xl text-lime-400">
+                  <h1 className=" font-codecr text-5xl text-accent-3">
                     My tools.
                   </h1>
                   <p className="whitespace-pre-line font-codecl text-lg">

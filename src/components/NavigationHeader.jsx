@@ -10,6 +10,9 @@ import {
 } from "../GlobalState";
 import CinematicBar from "./CinematicBar";
 
+import PaperPlaneLogo from "../icons/paperplanelogo";
+import MagneticHover from "./MagneticHover";
+
 export default function NavigationHeader() {
   const [currentScene] = useAtom(currentSceneAtom);
   const [currentPage] = useAtom(currentPageAtom);
@@ -42,11 +45,38 @@ export default function NavigationHeader() {
           } pointer-events-none`}
           animateCinematic={shouldAnimateCinematic}
         />
+
+        <div
+          className={`absolute left-10 z-20 ${
+            shouldAnimateCinematic
+              ? "top-6 opacity-100 ease-in"
+              : "top-14 opacity-30 ease-out"
+          } duration-700`}
+        >
+          <PaperPlaneLogo
+            height={"56px"}
+            width={"56px"}
+            className={"rounded-md bg-secondary"}
+          />
+        </div>
+
+        <div
+          className={`absolute w-14 h-14 right-10 flex rounded-md bg-secondary z-20 ${
+            shouldAnimateCinematic
+              ? "top-6 opacity-100 ease-in"
+              : "top-14 opacity-30 ease-out"
+          } duration-700`}
+        >
+          <MagneticHover className={"h-full w-full items-center justify-center flex"}>
+            <div className="rounded-full h-4/6 w-4/6 bg-lime-500 z-10"></div>
+          </MagneticHover>
+        </div>
       </div>
+
       <Header
         customClassName={`${
           shouldAnimateCinematic
-            ? "bg-opacity-70 ease-in duration-700"
+            ? "bg-opacity-80 ease-in duration-700"
             : "bg-opacity-0 ease-out duration-700"
         }`}
         customClassHeader={`${
@@ -58,8 +88,8 @@ export default function NavigationHeader() {
         <NavigationMenu
           customClassName={`${
             activePage1
-              ? "text-lime-400 bg-black hover:bg-black font-codecl"
-              : "hover:bg-white hover:text-black text-white font-codecr"
+              ? "text-accent-3 bg-black hover:bg-black font-codecr"
+              : "hover:bg-white hover:text-accent-1 text-accent-2 font-codecl"
           }`}
           onClick={() => goToPage("welcome")}
         >
@@ -68,8 +98,8 @@ export default function NavigationHeader() {
         <NavigationMenu
           customClassName={`${
             activePage2
-              ? "text-lime-400 bg-black hover:bg-black font-codecl"
-              : "hover:bg-white hover:text-black text-white font-codecr"
+              ? "text-accent-3 bg-black hover:bg-black font-codecr"
+              : "hover:bg-white hover:text-accent-1 text-accent-2 font-codecl"
           } `}
           onClick={() => goToPage("projects")}
         >
@@ -78,8 +108,8 @@ export default function NavigationHeader() {
         <NavigationMenu
           customClassName={`${
             activePage3
-              ? "text-lime-400 bg-black hover:bg-black font-codecl"
-              : "hover:bg-white hover:text-black text-white font-codecr"
+              ? "text-accent-3 bg-black hover:bg-black font-codecr"
+              : "hover:bg-white hover:text-accent-1 text-accent-2 font-codecl"
           } `}
           onClick={() => goToPage("about")}
         >
@@ -88,8 +118,8 @@ export default function NavigationHeader() {
         <NavigationMenu
           customClassName={`${
             activePage4
-              ? "text-lime-400 bg-black hover:bg-black font-codecl"
-              : "hover:bg-white hover:text-black text-white font-codecr"
+              ? "text-accent-3 bg-black hover:bg-black font-codecr"
+              : "hover:bg-white hover:text-accent-1 text-accent-2 font-codecl"
           } `}
           onClick={() => goToPage("skills")}
         >
@@ -98,8 +128,8 @@ export default function NavigationHeader() {
         <NavigationMenu
           customClassName={`${
             activePage5
-              ? "text-lime-400 bg-black hover:bg-black font-codecl"
-              : "hover:bg-white hover:text-black text-white font-codecr"
+              ? "text-accent-3 bg-black hover:bg-black font-codecr"
+              : "hover:bg-white hover:text-accent-1 text-accent-2 font-codecl"
           } `}
           onClick={() => goToPage("education")}
         >
@@ -108,8 +138,8 @@ export default function NavigationHeader() {
         <NavigationMenu
           customClassName={`${
             activePage6
-              ? "text-lime-400 bg-black hover:bg-black font-codecl"
-              : "hover:bg-white hover:text-black text-white font-codecr"
+              ? "text-accent-3 bg-black hover:bg-black font-codecr"
+              : "hover:bg-white hover:text-accent-1 text-accent-2 font-codecl"
           } `}
           onClick={() => goToPage("contact")}
         >

@@ -2,6 +2,17 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@layer base {
+  :root {
+    --color-primary: 41deg 100% 97%;
+    --color-secondary: 60deg 6% 22%;
+    --color-accent1: 0deg 0% 5%;
+    --color-accent2: 0deg 0% 95%;
+    --color-accent3: 81deg 76% 55%;
+    /* ... */
+  }
+}
+
 html,
 body,
 #root {
@@ -25,11 +36,11 @@ body,
 }
 
 .custom-loadingBottom {
-  bottom: -50%;
+  bottom: -70%;
 }
 
 .custom-loadingTop {
-  top: -50%;
+  top: -70%;
 }
 
 .custom-width {
@@ -54,6 +65,10 @@ body,
 
 .st3 {
   fill: #D2D1C7;
+}
+
+.progress-bar {
+  transform-origin: 0%;
 }
 
 @font-face {

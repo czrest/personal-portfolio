@@ -2,10 +2,10 @@ export default function Links({ customClassName, children }) {
   return (
     <>
       <div
-        className={`${customClassName} group text-black transition duration-300`}
+        className={`${customClassName} group text-accent-1 transition duration-300`}
       >
         {children}
-        <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-custom-brown"></span>
+        <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-secondary"></span>
       </div>
     </>
   );

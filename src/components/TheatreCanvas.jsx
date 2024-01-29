@@ -86,14 +86,10 @@ export default function TheatreCanvas() {
             <SheetProvider sheet={sheet}>
               <Scene />
 
-              {/* <EffectComposer disableNormalPass multisampling={4}>
-                <Bloom
-                  luminanceThreshold={0.7}
-                  luminanceSmoothing={1.55}
-                  height={300}
-                />
+              <EffectComposer disableNormalPass multisampling={4}>
+                {/* <SMAA /> */}
                 <TiltShift2 blur={0.05} />
-              </EffectComposer> */}
+              </EffectComposer>
 
               <Preload all />
             </SheetProvider>
@@ -145,7 +141,7 @@ const Scene = () => {
 
   return (
     <>
-      <color attach="background" args={["#fffaef"]} />
+      <color attach="background" args={["#FFFFF7"]} />
       <Environment
         background={false}
         files="kloofendal_38d_partly_cloudy_puresky_4k.hdr"
