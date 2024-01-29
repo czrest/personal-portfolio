@@ -11,6 +11,16 @@
     --color-accent3: 81deg 76% 55%;
     /* ... */
   }
+  @media (prefers-color-scheme:dark){
+    :root {
+      --color-primary: 60deg 6% 22%;
+      --color-secondary: 41deg 100% 97%;
+      --color-accent1: 0deg 0% 95%;
+      --color-accent2: 0deg 0% 5%;
+      --color-accent3: 81deg 76% 55%;
+      /* ... */
+    }
+  }
 }
 
 html,

@@ -21,7 +21,7 @@ export default function MagneticHover({ children, ...props }) {
   return (
     <>
       <motion.div
-        style={{ position: "relative" }}
+        style={{ position: "absolute" }}
         ref={ref}
         onMouseMove={handleMouse}
         onMouseLeave={reset}

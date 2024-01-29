@@ -13,3 +13,5 @@ export const worldLoadedAtom = atom(false);
 export const scrollToPageAtom = atom("welcome");
 
 export const isButtonPressed = atom(false);
+
+export const dataThemeAtom = atom("lighttheme");

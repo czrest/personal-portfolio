@@ -66,7 +66,7 @@ export default function ContactPage() {
               shouldAnimateContact
                 ? "pointer-events-auto"
                 : "pointer-events-none"
-            } group lowercase font-codecl border-black rounded-none p-3 text-accent-1 hover:text-accent-2 hover:bg-secondary hover:border-secondary`}
+            } group lowercase font-codecl border-black rounded-md p-3 text-accent-1 hover:text-accent-2 hover:bg-secondary hover:border-secondary`}
           >
             <EmailIcon
               height={"25px"}
@@ -90,7 +90,7 @@ export default function ContactPage() {
             <MessengerIcon
               height={"40px"}
               width={"40px"}
-              className={`fill-accent-1 mr-3 group-hover:fill-secondary p-1 rounded-xl duration-500`}
+              className={`fill-accent-1 mr-3 group-hover:fill-secondary group-hover:shadow-md group-hover:shadow-secondary/50 p-1 rounded-xl duration-500`}
             />
             <Links
               customClassName={`text-lg font-codecl`}
@@ -110,7 +110,7 @@ export default function ContactPage() {
             <LinkedinIcon
               height={"40px"}
               width={"40px"}
-              className={`fill-accent-1 mr-3 group-hover:fill-secondary p-1 rounded-xl duration-500`}
+              className={`fill-accent-1 mr-3 group-hover:fill-secondary group-hover:shadow-md group-hover:shadow-secondary/50 p-1 rounded-xl duration-500`}
             />
             <Links
               customClassName={`text-lg font-codecl`}
@@ -130,7 +130,7 @@ export default function ContactPage() {
             <GithubIcon
               height={"40px"}
               width={"40px"}
-              className={`fill-accent-1 mr-3 group-hover:fill-secondary p-1 rounded-xl duration-500`}
+              className={`fill-accent-1 mr-3 group-hover:fill-secondary group-hover:shadow-md group-hover:shadow-secondary/50 p-1 rounded-xl duration-500`}
             />
             <Links
               customClassName={`text-lg font-codecl`}

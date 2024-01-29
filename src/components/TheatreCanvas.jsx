@@ -47,6 +47,7 @@ import {
   currentPageAtom,
   currentSceneAtom,
   planeLoadedAtom,
+  dataThemeAtom,
 } from "../GlobalState";
 
 import Paper from "../modelcomps/Plane";
@@ -54,6 +55,7 @@ import SectionHtml from "./SectionHtml";
 import PaperWorld from "../modelcomps/Paperworld";
 import paperAnimation from "../paperAnimation.json";
 import ContactPage from "./ContactPage";
+import { THEME } from "../Data";
 
 export default function TheatreCanvas() {
   const sheet = getProject("Project Animation", {
@@ -108,6 +110,8 @@ const Scene = () => {
   const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
   const [currentScene, setCurrentScene] = useAtom(currentSceneAtom);
 
+  const [dataTheme] = useAtom(dataThemeAtom);
+
   const sequenceLength = val(sheet.sequence.pointer.length);
 
   function logCurrentPageCallback(scroll, callback) {
@@ -141,7 +145,7 @@ const Scene = () => {
 
   return (
     <>
-      <color attach="background" args={["#FFFFF7"]} />
+      <color attach="background" args={[THEME[dataTheme].tertiary]} />
       <Environment
         background={false}
         files="kloofendal_38d_partly_cloudy_puresky_4k.hdr"
