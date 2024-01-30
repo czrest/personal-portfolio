@@ -87,7 +87,7 @@ export default function SectionHtml() {
             ref={sections.skills}
             className="w-screen h-screen py-40 px-10 bg-black z-50 flex items-center justify-center"
           >
-            <div className="grid grid-cols-2 gap-y-10 gap-x-44 w-10/12 text-accent-2">
+            <div className="grid grid-cols-2 gap-y-10 gap-x-44 w-10/12 text-accent-5">
               <ContentContainer
                 customClassName={`flex flex-col items-start `}
                 shouldAnimate={shouldAnimateSkills1}

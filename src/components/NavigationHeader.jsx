@@ -33,8 +33,10 @@ export default function NavigationHeader() {
   function changeTheme(){
     if(dataTheme === "lighttheme"){
       setdataTheme("darktheme");
+      document.documentElement.setAttribute('data-theme', 'dark');
     } else {
       setdataTheme("lighttheme");
+      document.documentElement.setAttribute('data-theme', 'light');
     }
   }
 
@@ -82,11 +84,12 @@ export default function NavigationHeader() {
             mount: { scale: 1, y: 0 },
             unmount: { scale: 0, y: -25 },
           }}
-          className={"p-1 rounded-md text-accent-2 bg-secondary"}
+          placement="bottom"
+          className={"p-1 rounded-md text-accent-5 bg-secondary z-20"}
         >
           <button
             onClick={()=>changeTheme()}
-            className={`absolute items-center justify-center w-14 h-14 right-10 flex hover:contrast-125 rounded-md bg-secondary z-20 ${
+            className={`absolute items-center justify-center w-14 h-14 right-10 flex hover:contrast-125 rounded-md bg-secondary z-30 ${
               shouldAnimateCinematic
                 ? "top-6 opacity-100 ease-in"
                 : "top-14 opacity-30 ease-out hover:opacity-100"
@@ -95,7 +98,7 @@ export default function NavigationHeader() {
             <MagneticHover
               className={"group h-6/5 w-6/5 items-center justify-center flex"}
             >
-              <div className="rounded-full h-8 w-8 group-hover:w-10 group-hover:h-10 group-hover:shadow-lg group-hover:shadow-lime-400/50 bg-lime-400 z-10 opacity-90"></div>
+              <div className="rounded-full h-8 w-8 group-hover:w-10 group-hover:h-10 group-hover:shadow-lg group-hover:shadow-tertiary/50 bg-tertiary z-10 opacity-90"></div>
             </MagneticHover>
           </button>
         </Tooltip>
@@ -116,8 +119,8 @@ export default function NavigationHeader() {
         <NavigationMenu
           customClassName={`${
             activePage1
-              ? "text-accent-3 bg-black hover:bg-black font-codecr"
-              : "hover:bg-white hover:text-accent-1 text-accent-2 font-codecl"
+              ? "text-accent-3 bg-accent-6 hover:bg-accent-6 font-codecr"
+              : "hover:bg-accent-5 text-accent-5 hover:text-accent-4 font-codecl"
           }`}
           onClick={() => goToPage("welcome")}
         >
@@ -126,8 +129,8 @@ export default function NavigationHeader() {
         <NavigationMenu
           customClassName={`${
             activePage2
-              ? "text-accent-3 bg-black hover:bg-black font-codecr"
-              : "hover:bg-white hover:text-accent-1 text-accent-2 font-codecl"
+              ? "text-accent-3 bg-accent-6 hover:bg-accent-6 font-codecr"
+              : "hover:bg-accent-5 text-accent-5 hover:text-accent-4 font-codecl"
           } `}
           onClick={() => goToPage("projects")}
         >
@@ -136,8 +139,8 @@ export default function NavigationHeader() {
         <NavigationMenu
           customClassName={`${
             activePage3
-              ? "text-accent-3 bg-black hover:bg-black font-codecr"
-              : "hover:bg-white hover:text-accent-1 text-accent-2 font-codecl"
+              ? "text-accent-3 bg-accent-6 hover:bg-accent-6 font-codecr"
+              : "hover:bg-accent-5 text-accent-5 hover:text-accent-4 font-codecl"
           } `}
           onClick={() => goToPage("about")}
         >
@@ -146,8 +149,8 @@ export default function NavigationHeader() {
         <NavigationMenu
           customClassName={`${
             activePage4
-              ? "text-accent-3 bg-black hover:bg-black font-codecr"
-              : "hover:bg-white hover:text-accent-1 text-accent-2 font-codecl"
+              ? "text-accent-3 bg-accent-6 hover:bg-accent-6 font-codecr"
+              : "hover:bg-accent-5 text-accent-5 hover:text-accent-4 font-codecl"
           } `}
           onClick={() => goToPage("skills")}
         >
@@ -156,8 +159,8 @@ export default function NavigationHeader() {
         <NavigationMenu
           customClassName={`${
             activePage5
-              ? "text-accent-3 bg-black hover:bg-black font-codecr"
-              : "hover:bg-white hover:text-accent-1 text-accent-2 font-codecl"
+              ? "text-accent-3 bg-accent-6 hover:bg-accent-6 font-codecr"
+              : "hover:bg-accent-5 text-accent-5 hover:text-accent-4 font-codecl"
           } `}
           onClick={() => goToPage("education")}
         >
@@ -166,8 +169,8 @@ export default function NavigationHeader() {
         <NavigationMenu
           customClassName={`${
             activePage6
-              ? "text-accent-3 bg-black hover:bg-black font-codecr"
-              : "hover:bg-white hover:text-accent-1 text-accent-2 font-codecl"
+              ? "text-accent-3 bg-accent-6 hover:bg-accent-6 font-codecr"
+              : "hover:bg-accent-5 text-accent-5 hover:text-accent-4 font-codecl"
           } `}
           onClick={() => goToPage("contact")}
         >

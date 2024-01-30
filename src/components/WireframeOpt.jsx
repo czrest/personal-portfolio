@@ -1,5 +1,5 @@
 import { Wireframe } from "@react-three/drei";
-import { THEME } from "../Data";
+import { THEME } from "../data";
 import { dataThemeAtom } from "../GlobalState";
 import { useAtom } from "jotai";
 
@@ -13,12 +13,12 @@ export default function WireframeOpt({ strokeOpacity, fillOpacity, thickness }) 
         squeezeMin={0.2}
         squeezeMax={1}
         fillMix={1}
-        fill={THEME[dataTheme].primary}
+        fill={THEME[dataTheme].planeprimary}
         fillOpacity={fillOpacity}
-        stroke={THEME[dataTheme].secondary}
+        stroke={THEME[dataTheme].planesecondary}
         thickness={thickness}
         strokeOpacity={strokeOpacity}
-        backfaceStroke={THEME[dataTheme].secondary}
+        backfaceStroke={THEME[dataTheme].planesecondary}
       />
     </>
   );
