@@ -17,14 +17,6 @@ function App() {
   const [worldloaded] = useAtom(worldLoadedAtom);
   const [dataTheme, setDataTheme] = useAtom(dataThemeAtom);
 
-  useEffect(()=>{
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setDataTheme("darktheme");
-    } else{
-      setDataTheme("lighttheme");
-    }
-  },[]);
-
   useEffect(() => {
 
     const timer = setTimeout(() => {

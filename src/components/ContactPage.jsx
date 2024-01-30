@@ -25,13 +25,11 @@ export default function ContactPage() {
   const [tooltipColor, setTooltipColor] = useState("bg-accent-1");
 
   const handleButtonClick = () => {
-    // Change tooltip content when button is clicked
-    setTooltipContent("Saved to clipboard");
+    setTooltipContent("Copied to clipboard!");
     setTooltipColor("bg-accent-3 text-accent-1");
   };
 
   const handleTooltipHover = () => {
-    // Reset tooltip content when hovered again
     setTooltipContent("Copy to clipboard");
     setTooltipColor("bg-accent-1 text-accent-2");
   };
@@ -66,12 +64,12 @@ export default function ContactPage() {
               shouldAnimateContact
                 ? "pointer-events-auto"
                 : "pointer-events-none"
-            } group lowercase font-codecl border-black rounded-md p-3 text-accent-1 hover:text-accent-2 hover:bg-secondary hover:border-secondary`}
+            } group lowercase font-codecl border-secondary rounded-md p-3 text-accent-1 hover:text-accent-5 hover:bg-secondary hover:border-secondary`}
           >
             <EmailIcon
               height={"25px"}
               width={"25px"}
-              className={`fill-accent-1 mr-3 group-hover:fill-primary`}
+              className={`fill-accent-1 mr-3 group-hover:fill-accent-5`}
             />
             sam_torreda@yahoo.com
           </Button>

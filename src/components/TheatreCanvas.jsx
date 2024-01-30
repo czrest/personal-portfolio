@@ -1,37 +1,18 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
   Environment,
   ScrollControls,
   useScroll,
   Float,
-  Loader,
   Preload,
 } from "@react-three/drei";
 import { getProject, val } from "@theatre/core";
 
 import {
-  HueSaturation,
-  Pixelation,
-  Outline,
-  Bloom,
-  DepthOfField,
   EffectComposer,
-  GodRays,
-  Sepia,
-  Noise,
-  DotScreen,
-  Vignette,
-  ChromaticAberration,
-  BrightnessContrast,
-  N8AO,
   TiltShift2,
-  SMAA,
-  SSAO,
-  Autofocus,
-  ColorAverage,
 } from "@react-three/postprocessing";
-import { BlendFunction, KernelSize, Resolution } from "postprocessing";
 
 import { Suspense } from "react";
 
@@ -55,7 +36,7 @@ import SectionHtml from "./SectionHtml";
 import PaperWorld from "../modelcomps/Paperworld";
 import paperAnimation from "../paperAnimation.json";
 import ContactPage from "./ContactPage";
-import { THEME } from "../Data";
+import { THEME } from "../data";
 
 export default function TheatreCanvas() {
   const sheet = getProject("Project Animation", {
@@ -88,8 +69,7 @@ export default function TheatreCanvas() {
             <SheetProvider sheet={sheet}>
               <Scene />
 
-              <EffectComposer disableNormalPass multisampling={4}>
-                {/* <SMAA /> */}
+              <EffectComposer disableNormalPass multisampling={20}>
                 <TiltShift2 blur={0.05} />
               </EffectComposer>
 
@@ -98,7 +78,6 @@ export default function TheatreCanvas() {
           </ScrollControls>
         </Suspense>
       </Canvas>
-      {/* <Loader /> */}
     </>
   );
 }
@@ -109,6 +88,7 @@ const Scene = () => {
 
   const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
   const [currentScene, setCurrentScene] = useAtom(currentSceneAtom);
+  const [isDark, setisDark] = useState(null);
 
   const [dataTheme] = useAtom(dataThemeAtom);
 
@@ -140,15 +120,19 @@ const Scene = () => {
   });
 
   useEffect(() => {
-    // console.log("Current Scene: ", currentScene);
-  }, [currentScene]);
+    if (dataTheme === "darktheme"){
+      setisDark(true);
+    } else {
+      setisDark(false);
+    }
+  }, [dataTheme]);
 
   return (
     <>
-      <color attach="background" args={[THEME[dataTheme].tertiary]} />
+      <color attach="background" enabled={!isDark} args={[THEME[dataTheme].tertiary]} />
       <Environment
         background={false}
-        files="kloofendal_38d_partly_cloudy_puresky_4k.hdr"
+        files="night.hdr"
         castShadow
       />
       <PerspectiveCamera
@@ -160,7 +144,6 @@ const Scene = () => {
         far={70}
       />
       <ambientLight intensity={1} />
-      {/* <SpotlightWithHelper theatreKey='spot light 1' position={[0,0,0]} intensity={1} showHelper={true} /> */}
 
       <Float
         speed={3} // Animation speed, defaults to 1

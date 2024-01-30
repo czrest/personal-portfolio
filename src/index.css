@@ -6,20 +6,28 @@
   :root {
     --color-primary: 41deg 100% 97%;
     --color-secondary: 60deg 6% 22%;
+    --color-tertiary: 81deg 76% 55%;
     --color-accent1: 0deg 0% 5%;
     --color-accent2: 0deg 0% 95%;
     --color-accent3: 81deg 76% 55%;
+
+    --color-accent4: 0deg 0% 5%;
+    --color-accent5: 0deg 0% 95%;
+    --color-accent6: 0deg 0% 5%;
     /* ... */
   }
-  @media (prefers-color-scheme:dark){
-    :root {
-      --color-primary: 60deg 6% 22%;
-      --color-secondary: 41deg 100% 97%;
-      --color-accent1: 0deg 0% 95%;
-      --color-accent2: 0deg 0% 5%;
-      --color-accent3: 81deg 76% 55%;
-      /* ... */
-    }
+  :root[data-theme="dark"] {
+    --color-primary: 213deg 80% 6%;
+    --color-secondary: 205deg 100% 63%;
+    --color-tertiary: 202deg 100% 15%;
+    --color-accent1: 0deg 0% 95%;
+    --color-accent2: 0deg 0% 5%;
+    --color-accent3: 205deg 100% 63%;
+
+    --color-accent4: 0deg 0% 5%;
+    --color-accent5: 0deg 0% 95%;
+    --color-accent6: 202deg 100% 15%;
+    /* ... */
   }
 }
 

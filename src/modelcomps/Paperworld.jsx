@@ -11,7 +11,7 @@ import { editable as e } from "@theatre/r3f";
 import { useAtom } from "jotai";
 
 import { worldLoadedAtom, dataThemeAtom } from "../GlobalState";
-import { THEME } from "../Data";
+import { THEME } from "../data";
 
 export default function PaperWorld(props) {
   const { nodes, materials } = useGLTF('/paperworld-transformed.glb')

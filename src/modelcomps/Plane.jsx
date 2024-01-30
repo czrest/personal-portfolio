@@ -64,13 +64,13 @@ const Paper = () => {
 
   useEffect(() => {
     const targetValue = showLines ? 1 : 0;
-    const step = showLines ? 0.1 : -0.1;
+    const step = showLines ? 0.05 : -0.05;
     return animateOpacity(setStrokeOpacity, targetValue, step, 0);
   }, [currentScene]);
 
   useEffect(() => {
     const targetValue = !showLines ? 1 : 0.6;
-    const step = !showLines ? 0.1 : -0.1;
+    const step = !showLines ? 0.05 : -0.05;
     const minValue = 0.6;
 
     if (currentScene >= 7 && currentScene <= 11) {
