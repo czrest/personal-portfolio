@@ -32,9 +32,11 @@ export default function SectionHtml() {
 
   const scrollToRef = (ref) => {
     scroll.el.scrollTo({
-      left: ref?.current?.offsetLeft,
+      left: (ref?.current?.offsetLeft * 0.31432),
       behavior: "smooth",
     });
+    
+    console.log(ref?.current?.offsetLeft);
   };
 
   // const data = useScroll();
