@@ -114,14 +114,14 @@ export default function NavigationHeader() {
           shouldAnimateCinematic
             ? "top-6 ease-in duration-700"
             : "top-14 ease-out duration-700"
-        }`}
+        } group`}
       >
         <NavigationMenu
           customClassName={`${
             activePage1
               ? "text-accent-3 bg-accent-6 hover:bg-accent-6 font-codecr"
               : "hover:bg-accent-5 text-accent-5 hover:text-accent-4 font-codecl"
-          }`}
+          } ${shouldAnimateCinematic? 'bg-opacity-100':'bg-opacity-0 group-hover:bg-opacity-100'}`}
           onClick={() => goToPage("welcome")}
         >
           Samuel Torreda
@@ -131,7 +131,7 @@ export default function NavigationHeader() {
             activePage2
               ? "text-accent-3 bg-accent-6 hover:bg-accent-6 font-codecr"
               : "hover:bg-accent-5 text-accent-5 hover:text-accent-4 font-codecl"
-          } `}
+          } ${shouldAnimateCinematic? 'bg-opacity-100':'bg-opacity-0 group-hover:bg-opacity-100'}`}
           onClick={() => goToPage("projects")}
         >
           Projects
@@ -141,7 +141,7 @@ export default function NavigationHeader() {
             activePage3
               ? "text-accent-3 bg-accent-6 hover:bg-accent-6 font-codecr"
               : "hover:bg-accent-5 text-accent-5 hover:text-accent-4 font-codecl"
-          } `}
+          } ${shouldAnimateCinematic? 'bg-opacity-100':'bg-opacity-0 group-hover:bg-opacity-100'}`}
           onClick={() => goToPage("about")}
         >
           About
@@ -151,7 +151,7 @@ export default function NavigationHeader() {
             activePage4
               ? "text-accent-3 bg-accent-6 hover:bg-accent-6 font-codecr"
               : "hover:bg-accent-5 text-accent-5 hover:text-accent-4 font-codecl"
-          } `}
+          } ${shouldAnimateCinematic? 'bg-opacity-100':'bg-opacity-0 group-hover:bg-opacity-100'}`}
           onClick={() => goToPage("skills")}
         >
           Skills
@@ -161,7 +161,7 @@ export default function NavigationHeader() {
             activePage5
               ? "text-accent-3 bg-accent-6 hover:bg-accent-6 font-codecr"
               : "hover:bg-accent-5 text-accent-5 hover:text-accent-4 font-codecl"
-          } `}
+          } ${shouldAnimateCinematic? 'bg-opacity-100':'bg-opacity-0 group-hover:bg-opacity-100'}`}
           onClick={() => goToPage("education")}
         >
           Education
@@ -171,7 +171,7 @@ export default function NavigationHeader() {
             activePage6
               ? "text-accent-3 bg-accent-6 hover:bg-accent-6 font-codecr"
               : "hover:bg-accent-5 text-accent-5 hover:text-accent-4 font-codecl"
-          } `}
+          } ${shouldAnimateCinematic? 'bg-opacity-100':'bg-opacity-0 group-hover:bg-opacity-100'}`}
           onClick={() => goToPage("contact")}
         >
           Contact
