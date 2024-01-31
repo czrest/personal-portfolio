@@ -61,17 +61,6 @@ export default function SectionHtml() {
           <section className="w-screen h-screen relative flex flex-col justify-center items-center"></section>
           <section className="w-screen h-screen relative flex flex-col justify-center items-center"></section>
           <section
-            ref={sections.projects}
-            className="w-screen h-screen grid grid-flow-col gap-4 justify-items-stretch content-center"
-          >
-            <ContentContainer
-              customClassName="flex justify-center"
-              shouldAnimate
-            >
-              project
-            </ContentContainer>
-          </section>
-          <section
             ref={sections.about}
             className="w-screen h-screen grid grid-flow-col gap-4 justify-items-stretch content-center"
           >
@@ -80,6 +69,17 @@ export default function SectionHtml() {
               shouldAnimate
             >
               about
+            </ContentContainer>
+          </section>
+          <section
+            ref={sections.projects}
+            className="w-screen h-screen grid grid-flow-col gap-4 justify-items-stretch content-center"
+          >
+            <ContentContainer
+              customClassName="flex justify-center"
+              shouldAnimate
+            >
+              project
             </ContentContainer>
           </section>
           <section

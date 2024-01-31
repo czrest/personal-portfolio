@@ -140,9 +140,9 @@ export default function NavigationHeader() {
               ? "text-accent-3 bg-accent-6 hover:bg-accent-6 font-codecr"
               : "hover:bg-accent-5 text-accent-5 hover:text-accent-4 font-codecl"
           } ${shouldAnimateCinematic? 'bg-opacity-100':'bg-opacity-0 group-hover:bg-opacity-100'}`}
-          onClick={() => goToPage("projects")}
+          onClick={() => goToPage("about")}
         >
-          Projects
+          About
         </NavigationMenu>
         <NavigationMenu
           customClassName={`${
@@ -150,9 +150,9 @@ export default function NavigationHeader() {
               ? "text-accent-3 bg-accent-6 hover:bg-accent-6 font-codecr"
               : "hover:bg-accent-5 text-accent-5 hover:text-accent-4 font-codecl"
           } ${shouldAnimateCinematic? 'bg-opacity-100':'bg-opacity-0 group-hover:bg-opacity-100'}`}
-          onClick={() => goToPage("about")}
+          onClick={() => goToPage("projects")}
         >
-          About
+          Projects
         </NavigationMenu>
         <NavigationMenu
           customClassName={`${

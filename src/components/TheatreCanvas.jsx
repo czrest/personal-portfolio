@@ -36,8 +36,9 @@ import Paper from "../modelcomps/Plane";
 import SectionHtml from "./SectionHtml";
 import PaperWorld from "../modelcomps/Paperworld";
 import paperAnimation from "../paperAnimation.json";
-import ContactPage from "./ContactPage";
+import ContactPage from "./pages/ContactPage";
 import { THEME } from "../data";
+import LandingPage from "./pages/LandingPage";
 
 export default function TheatreCanvas() {
   const sheet = getProject("Project Animation", {
@@ -54,10 +55,11 @@ export default function TheatreCanvas() {
         <>
           <div className="relative">
             <ContactPage/>
+            <LandingPage/>
           </div>
         </>
       )}
-      <Canvas gl={{ preserveDrawingBuffer: true }} shadows>
+      <Canvas gl={{ preserveDrawingBuffer: true }}>
         <Suspense fallback={null}>
           <ScrollControls
             pages={8}

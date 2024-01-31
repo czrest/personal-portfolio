@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 
-import ContentContainer from "./ContentContainer";
-import GithubIcon from "../icons/github";
-import LinkedinIcon from "../icons/linkedin";
-import MessengerIcon from "../icons/messenger";
-import Links from "./Links";
-import EmailIcon from "../icons/email";
+import ContentContainer from "../ContentContainer";
+import GithubIcon from "../../icons/github";
+import LinkedinIcon from "../../icons/linkedin";
+import MessengerIcon from "../../icons/messenger";
+import Links from "../Links";
+import EmailIcon from "../../icons/email";
 import { Tooltip, Button } from "@material-tailwind/react";
 
-import { currentSceneAtom } from "../GlobalState";
+import { currentSceneAtom } from "../../GlobalState";
 import { useAtom } from "jotai";
-import PaperPlaneLogo from "../icons/paperplanelogo";
+import PaperPlaneLogo from "../../icons/paperplanelogo";
 
 export default function ContactPage() {
   const [currentScene] = useAtom(currentSceneAtom);
@@ -21,16 +21,16 @@ export default function ContactPage() {
     handleButtonClick();
   }
 
-  const [tooltipContent, setTooltipContent] = useState("Copy to clipboard");
+  const [tooltipContent, setTooltipContent] = useState("Copy mail?");
   const [tooltipColor, setTooltipColor] = useState("bg-accent-1");
 
   const handleButtonClick = () => {
-    setTooltipContent("Copied to clipboard!");
+    setTooltipContent("Mail copied");
     setTooltipColor("bg-accent-3 text-accent-1");
   };
 
   const handleTooltipHover = () => {
-    setTooltipContent("Copy to clipboard");
+    setTooltipContent("Copy mail?");
     setTooltipColor("bg-accent-1 text-accent-2");
   };
   return (
@@ -40,7 +40,7 @@ export default function ContactPage() {
         shouldAnimate={shouldAnimateContact}
       >
         <div className="absolute bottom-10 left-10">
-          <h2 className="font-codech text-xl">© 2024 Samuel Torreda</h2>
+          <h2 className="whitespace-pre font-codech text-xl">©2024  <span className="font-codecl">Samuel Torreda</span></h2>
         </div>
 
         <div>
@@ -53,7 +53,7 @@ export default function ContactPage() {
           placement="right"
           animate={{
             mount: { scale: 1, x: 0 },
-            unmount: { scale: 0, x: -50 },
+            unmount: { scale: 0, x: -40 },
           }}
         >
           <Button
@@ -93,7 +93,7 @@ export default function ContactPage() {
               className={`fill-accent-1 mr-3 group-hover:fill-secondary group-hover:shadow-md group-hover:shadow-secondary/50 p-1 rounded-xl duration-500`}
             />
             <Links
-              customClassName={`text-lg font-codecl`}
+              customClassName={`text-xl font-codecl`}
             >
               Messenger
             </Links>
@@ -113,7 +113,7 @@ export default function ContactPage() {
               className={`fill-accent-1 mr-3 group-hover:fill-secondary group-hover:shadow-md group-hover:shadow-secondary/50 p-1 rounded-xl duration-500`}
             />
             <Links
-              customClassName={`text-lg font-codecl`}
+              customClassName={`text-xl font-codecl`}
             >
               LinkedIn
             </Links>
@@ -133,7 +133,7 @@ export default function ContactPage() {
               className={`fill-accent-1 mr-3 group-hover:fill-secondary group-hover:shadow-md group-hover:shadow-secondary/50 p-1 rounded-xl duration-500`}
             />
             <Links
-              customClassName={`text-lg font-codecl`}
+              customClassName={`text-xl font-codecl`}
             >
               Github
             </Links>
