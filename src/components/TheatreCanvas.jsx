@@ -70,8 +70,8 @@ export default function TheatreCanvas() {
               <Scene />
 
               <SectionHtml />
-              <EffectComposer disableNormalPass multisampling={20}>
-                <TiltShift2 blur={0.05} />
+              <EffectComposer disableNormalPass multisampling={4}>
+                <TiltShift2 blur={0} />
               </EffectComposer>
 
               <Preload all />

@@ -17,7 +17,6 @@ import CinematicBar from "./CinematicBar";
 
 import PaperPlaneLogo from "../icons/paperplanelogo";
 import MagneticHover from "./MagneticHover";
-import { motion, progress, useSpring } from 'framer-motion';
 
 export default function NavigationHeader() {
   const [currentScene] = useAtom(currentSceneAtom);
