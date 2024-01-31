@@ -8,9 +8,9 @@ export const THEME = {
         planesecondary: "#3b3b35",
     },
     darktheme: {
-        primary: "#15202b",
+        primary: "#040c1c",
         secondary: "#d9e6ef",
-        tertiary: "#030e1b",
+        tertiary: "#04344c",
 
         planeprimary: "#d9e6ef",
         planesecondary: "#0d1826",

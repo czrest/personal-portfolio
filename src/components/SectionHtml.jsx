@@ -1,7 +1,6 @@
 import { useScroll, Scroll } from "@react-three/drei";
 import { useRef, useEffect } from "react";
 import { useAtom } from "jotai";
-import { motion, useSpring } from "framer-motion";
 
 import {
   scrollToPageAtom,
@@ -35,8 +34,6 @@ export default function SectionHtml() {
       left: (ref?.current?.offsetLeft * 0.31432),
       behavior: "smooth",
     });
-    
-    console.log(ref?.current?.offsetLeft);
   };
 
   // const data = useScroll();

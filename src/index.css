@@ -18,7 +18,7 @@
   }
   :root[data-theme="dark"] {
     --color-primary: 213deg 80% 6%;
-    --color-secondary: 205deg 100% 63%;
+    --color-secondary: 205deg 100% 40%;
     --color-tertiary: 202deg 100% 15%;
     --color-accent1: 0deg 0% 95%;
     --color-accent2: 0deg 0% 5%;
@@ -83,10 +83,6 @@ body,
 
 .st3 {
   fill: #D2D1C7;
-}
-
-.progress-bar {
-  transform-origin: 0%;
 }
 
 @font-face {

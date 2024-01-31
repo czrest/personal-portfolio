@@ -29,6 +29,7 @@ import {
   currentSceneAtom,
   planeLoadedAtom,
   dataThemeAtom,
+  currentProgressAtom,
 } from "../GlobalState";
 
 import Paper from "../modelcomps/Plane";
@@ -88,6 +89,7 @@ const Scene = () => {
 
   const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
   const [currentScene, setCurrentScene] = useAtom(currentSceneAtom);
+  const [currentProgress, setCurrentProgress] = useAtom(currentProgressAtom);
   const [isDark, setisDark] = useState(null);
 
   const [dataTheme] = useAtom(dataThemeAtom);
@@ -116,6 +118,9 @@ const Scene = () => {
     if (scroll) {
       logCurrentPageCallback(scroll, setCurrentPage);
       sheet.sequence.position = scroll.offset * sequenceLength;
+
+      // console.log(scroll.offset.toFixed(2));
+      setCurrentProgress(100-(scroll.offset * 100));
     }
   });
 
