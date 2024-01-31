@@ -49,7 +49,7 @@ export default function ContactPage() {
 
         <Tooltip
           content={tooltipContent}
-          className={`${tooltipColor} p-1 rounded-md`}
+          className={`${tooltipColor} font-codecr`}
           placement="right"
           animate={{
             mount: { scale: 1, x: 0 },
@@ -60,11 +60,13 @@ export default function ContactPage() {
             onClick={() => copyToClipboard()}
             onMouseEnter={() => handleTooltipHover()}
             variant="outlined"
+
+            size="lg"
             className={`flex items-center group mt-10 ${
               shouldAnimateContact
                 ? "pointer-events-auto"
                 : "pointer-events-none"
-            } group lowercase font-codecl border-secondary rounded-md p-3 text-accent-1 hover:text-accent-5 hover:bg-secondary hover:border-secondary`}
+            } group lowercase font-codecl focus:ring-0 border-secondary rounded-md text-accent-1 hover:text-accent-5 hover:contrast-125 hover:bg-secondary hover:border-secondary`}
           >
             <EmailIcon
               height={"25px"}

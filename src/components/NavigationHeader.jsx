@@ -1,7 +1,9 @@
 import Header from "./Header";
 import NavigationMenu from "./NavigationMenu";
 import { useAtom } from "jotai";
-import { Tooltip } from "@material-tailwind/react";
+import { Progress, Tooltip, ThemeProvider } from "@material-tailwind/react";
+
+import { customTheme } from "../customTheme";
 
 import {
   currentPageAtom,
@@ -9,15 +11,18 @@ import {
   scrollToPageAtom,
   isButtonPressed,
   dataThemeAtom,
+  currentProgressAtom,
 } from "../GlobalState";
 import CinematicBar from "./CinematicBar";
 
 import PaperPlaneLogo from "../icons/paperplanelogo";
 import MagneticHover from "./MagneticHover";
+import { motion, progress, useSpring } from 'framer-motion';
 
 export default function NavigationHeader() {
   const [currentScene] = useAtom(currentSceneAtom);
   const [currentPage] = useAtom(currentPageAtom);
+  const [currentProgress] = useAtom(currentProgressAtom);
 
   const [, setScrollToPage] = useAtom(scrollToPageAtom);
   const [, setButtonPressed] = useAtom(isButtonPressed);
@@ -61,6 +66,10 @@ export default function NavigationHeader() {
           animateCinematic={shouldAnimateCinematic}
         />
 
+        <ThemeProvider value={customTheme}>
+          <Progress className="absolute z-20 rounded-none top-0 left-0 right-0 rotate-180 bg-accent-3" size="sm" value={currentProgress}></Progress>
+        </ThemeProvider>
+
         <a onClick={() => goToPage("welcome")}
           className={`absolute items-center justify-center w-14 h-14 left-10 flex hover:shadow-lg hover:shadow-secondary/50 hover:contrast-125 rounded-md bg-secondary z-20 ${
             shouldAnimateCinematic
@@ -85,7 +94,7 @@ export default function NavigationHeader() {
             unmount: { scale: 0, y: -25 },
           }}
           placement="bottom"
-          className={"p-1 rounded-md text-accent-5 bg-secondary z-20"}
+          className={"text-accent-5 font-codecr bg-secondary z-20"}
         >
           <button
             onClick={()=>changeTheme()}
