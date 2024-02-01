@@ -121,8 +121,8 @@ const Scene = () => {
       logCurrentPageCallback(scroll, setCurrentPage);
       sheet.sequence.position = scroll.offset * sequenceLength;
 
-      // console.log(scroll.offset.toFixed(2));
       setCurrentProgress(100-(scroll.offset * 100));
+      // console.log(currentProgress);
     }
   });
 
