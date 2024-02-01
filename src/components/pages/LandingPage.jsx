@@ -1,7 +1,7 @@
 import { currentSceneAtom, currentProgressAtom } from "../../GlobalState";
 import { useAtom } from "jotai";
 
-import ContentContainer from "../ContentContainer";
+import { TypeAnimation } from "react-type-animation";
 
 import Lottie from "lottie-react";
 import animationData from "../../icons/scrollLottie.json";
@@ -11,20 +11,20 @@ export default function LandingPage() {
   const [currentScene] = useAtom(currentSceneAtom);
   const [currentProgress] = useAtom(currentProgressAtom);
   const shouldAnimateContact = currentScene === 1;
-  
+
   const [opacity, setOpacity] = useState(1);
 
   const lottieRef = useRef();
 
-  useEffect(()=>{
-    if(lottieRef){
+  useEffect(() => {
+    if (lottieRef) {
       lottieRef.current.setSpeed(0.5);
     }
-  },[lottieRef]);
+  }, [lottieRef]);
 
-  useEffect(()=>{
+  useEffect(() => {
     setOpacity((currentProgress - 95) / 5);
-  },[currentProgress]);
+  }, [currentProgress]);
 
   return (
     <>
@@ -33,10 +33,14 @@ export default function LandingPage() {
         style={{ opacity: opacity }}
       >
         <div className="absolute flex bottom-10 left-10">
-          <h2 className="whitespace-pre font-codecl text-xl">
-            Scroll
-          </h2>
-          <Lottie lottieRef={lottieRef} animationData={animationData} loop={true} autoplay={true} className="h-1 self-end mb-2"/>
+          <h2 className="whitespace-pre font-codecl text-xl">Scroll</h2>
+          <Lottie
+            lottieRef={lottieRef}
+            animationData={animationData}
+            loop={true}
+            autoplay={true}
+            className="h-1 self-end mb-2"
+          />
         </div>
 
         <div className="flex flex-col ">
@@ -46,7 +50,9 @@ export default function LandingPage() {
           <h2 className="font-codecl text-xl text-accent-4">
             Web Developer | Designer
           </h2>
-          <p className=" text-base font-codecl">Bringing <span className="font-codecb text-accent-3">IDEAS</span> to life.</p>
+          <p className="whitespace-pre text-xl font-codecl text-accent-4">
+            Bringing <TypeAnimation sequence={[ "IDEAS", 5000, "INNOVATION", 5000, "CREATIVITY", 5000, "IMAGINATION", 5000, ]} wrapper="span" cursor={false} speed={15} repeat={Infinity} className="text-accent-3 font-codecb"/> to life!
+          </p>
         </div>
       </div>
     </>
