@@ -110,19 +110,20 @@ const Scene = () => {
     //calculate total scenes
     const computeScene = (currentPage - 1) * 2 + sceneOffsetForCurrentPage;
 
+    const computeCurrentProgress = parseFloat((100 - scroll.offset * 100).toFixed(2));
+
     // console.log("Current Page: ", currentPage);
     // console.log("Current Scene: ", currentScene);
+    // console.log(currentProgress);
     callback(currentPage);
     setCurrentScene(computeScene);
+    setCurrentProgress(computeCurrentProgress);
   }
 
   useFrame(() => {
     if (scroll) {
       logCurrentPageCallback(scroll, setCurrentPage);
       sheet.sequence.position = scroll.offset * sequenceLength;
-
-      setCurrentProgress(100-(scroll.offset * 100));
-      // console.log(currentProgress);
     }
   });
 

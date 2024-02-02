@@ -6,6 +6,7 @@ import { TypeAnimation } from "react-type-animation";
 import Lottie from "lottie-react";
 import animationData from "../../icons/scrollLottie.json";
 import { useEffect, useRef, useState } from "react";
+import { useFrame } from "@react-three/fiber";
 
 export default function LandingPage() {
   const [currentScene] = useAtom(currentSceneAtom);
@@ -22,9 +23,12 @@ export default function LandingPage() {
     }
   }, [lottieRef]);
 
-  useEffect(() => {
-    setOpacity((currentProgress - 95) / 5);
-  }, [currentProgress]);
+  // useFrame(() => {
+  //   const calculateOpacity = () => (currentProgress - 95) / 5;
+  //   if (currentProgress >= 95){
+  //     setOpacity(calculateOpacity);
+  //   }
+  // });
 
   return (
     <>
