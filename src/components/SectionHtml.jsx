@@ -88,7 +88,7 @@ export default function SectionHtml() {
           >
             <div className="grid grid-cols-2 gap-y-10 gap-x-44 w-10/12 text-accent-5">
               <ContentContainer
-                customClassName={`flex flex-col items-start `}
+                customClassName={`flex flex-col justify-self-end items-end max-w-lg`}
                 shouldAnimate={shouldAnimateSkills1}
               >
                 <div className="w-11/12">
@@ -103,7 +103,7 @@ export default function SectionHtml() {
               </ContentContainer>
 
               <ContentContainer
-                customClassName={`flex flex-col items-end`}
+                customClassName={`flex flex-col max-w-lg`}
                 shouldAnimate={shouldAnimateSkills2}
               >
                 <div className="w-11/12">
@@ -115,7 +115,7 @@ export default function SectionHtml() {
               </ContentContainer>
 
               <ContentContainer
-                customClassName={`flex flex-col delay-100 items-start`}
+                customClassName={`flex flex-col delay-100 justify-self-end items-end max-w-lg`}
                 shouldAnimate={shouldAnimateSkills1}
               >
                 <div className="w-11/12">
@@ -132,7 +132,7 @@ export default function SectionHtml() {
               </ContentContainer>
 
               <ContentContainer
-                customClassName={`flex flex-col delay-100 items-end`}
+                customClassName={`flex flex-col delay-100 max-w-lg`}
                 shouldAnimate={shouldAnimateSkills2}
               >
                 <div className="w-11/12 flex flex-row">

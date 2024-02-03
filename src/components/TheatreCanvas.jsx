@@ -9,10 +9,7 @@ import {
 } from "@react-three/drei";
 import { getProject, val } from "@theatre/core";
 
-import {
-  EffectComposer,
-  TiltShift2,
-} from "@react-three/postprocessing";
+import { EffectComposer, TiltShift2 } from "@react-three/postprocessing";
 
 import { Suspense } from "react";
 
@@ -39,6 +36,7 @@ import paperAnimation from "../paperAnimation.json";
 import ContactPage from "./pages/ContactPage";
 import { THEME } from "../data";
 import LandingPage from "./pages/LandingPage";
+import SubtitleText from "./pages/SubtitleText";
 
 export default function TheatreCanvas() {
   const sheet = getProject("Project Animation", {
@@ -49,13 +47,18 @@ export default function TheatreCanvas() {
 
   const [planeLoaded] = useAtom(planeLoadedAtom);
 
+  const showSubtitle1 = currentScene >= 2 && currentScene <= 3;
+  const showSubtitle2 = currentScene >= 4 && currentScene <= 6;
+
   return (
     <>
       {planeLoaded && (
         <>
           <div className="relative">
-            <ContactPage/>
-            <LandingPage/>
+            <LandingPage />
+            {showSubtitle1 && <SubtitleText>A web developer with a passion for digital art and design.</SubtitleText>}
+            {showSubtitle2 && <SubtitleText>Explore my work and learn more about me.</SubtitleText>}
+            <ContactPage />
           </div>
         </>
       )}
@@ -110,7 +113,9 @@ const Scene = () => {
     //calculate total scenes
     const computeScene = (currentPage - 1) * 2 + sceneOffsetForCurrentPage;
 
-    const computeCurrentProgress = parseFloat((100 - scroll.offset * 100).toFixed(2));
+    const computeCurrentProgress = parseFloat(
+      (100 - scroll.offset * 100).toFixed(2)
+    );
 
     // console.log("Current Page: ", currentPage);
     // console.log("Current Scene: ", currentScene);
@@ -128,7 +133,7 @@ const Scene = () => {
   });
 
   useEffect(() => {
-    if (dataTheme === "darktheme"){
+    if (dataTheme === "darktheme") {
       setisDark(true);
     } else {
       setisDark(false);
@@ -137,12 +142,12 @@ const Scene = () => {
 
   return (
     <>
-      <color attach="background" enabled={!isDark} args={[THEME[dataTheme].tertiary]} />
-      <Environment
-        background={false}
-        files="night.hdr"
-        castShadow
+      <color
+        attach="background"
+        enabled={!isDark}
+        args={[THEME[dataTheme].tertiary]}
       />
+      <Environment background={false} files="night.hdr" castShadow />
       <PerspectiveCamera
         theatreKey="Camera"
         makeDefault
