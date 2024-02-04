@@ -10,6 +10,7 @@ import {
 } from "../GlobalState";
 import ContentContainer from "./ContentContainer";
 import HoverText from "./HoverText";
+import ChipsText from "./ChipsText";
 
 export default function SectionHtml() {
   const scroll = useScroll();
@@ -31,7 +32,7 @@ export default function SectionHtml() {
 
   const scrollToRef = (ref) => {
     scroll.el.scrollTo({
-      left: (ref?.current?.offsetLeft * 0.31432),
+      left: ref?.current?.offsetLeft * 0.31432,
       behavior: "smooth",
     });
   };
@@ -73,13 +74,36 @@ export default function SectionHtml() {
           </section>
           <section
             ref={sections.projects}
-            className="w-screen h-screen grid grid-flow-col gap-4 justify-items-stretch content-center"
+            className="w-screen h-screen grid grid-cols-2 gap-x-20 py-40 px-10 items-center"
           >
             <ContentContainer
-              customClassName="flex justify-center"
+              customClassName="flex flex-col group rounded-3xl max-w-md border border-accent-1 backdrop-blur-sm duration-500 hover:bg-primary"
               shouldAnimate
             >
-              project
+              <div className="col-span-2"><img src="./" alt="project image" className="h-32 w-full rounded-t-3xl opacity-80 contrast-120 group-hover:opacity-100 duration-500"/></div>
+              <div className="flex flex-row justify-between items-center p-3">
+                <h1 className="text-lg font-codecb text-accent-1 ">E-waste Manager</h1>
+                <div className="flex flex-cols justify-self-end">
+                  <ChipsText value={`Java`} />
+                  <ChipsText value={`Firebase`} />
+                  <ChipsText value={`Android Studio`} />
+                </div>
+              </div>
+            </ContentContainer>
+
+            <ContentContainer
+              customClassName="flex flex-col group rounded-3xl max-w-md border border-accent-1 backdrop-blur-sm duration-500 hover:bg-primary"
+              shouldAnimate
+            >
+              <div className="col-span-2"><img src="./PersonalTour.png" alt="project image" className="h-32 w-full rounded-t-3xl opacity-80 contrast-120 group-hover:opacity-100 duration-500"/></div>
+              <div className="flex flex-row justify-between items-center p-3">
+                <h1 className="text-lg font-codecb text-accent-1 ">Personal Tour App</h1>
+                <div className="flex flex-cols justify-self-end">
+                  <ChipsText value={`Java`} />
+                  <ChipsText value={`Firebase`} />
+                  <ChipsText value={`Android Studio`} />
+                </div>
+              </div>
             </ContentContainer>
           </section>
           <section

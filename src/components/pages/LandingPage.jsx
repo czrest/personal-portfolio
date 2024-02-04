@@ -6,15 +6,13 @@ import { TypeAnimation } from "react-type-animation";
 import Lottie from "lottie-react";
 import animationData from "../../icons/scrollLottie.json";
 import { useEffect, useRef, useState } from "react";
-import { useFrame } from "@react-three/fiber";
+import ContentContainer from "../ContentContainer";
 
 export default function LandingPage() {
   const [currentScene] = useAtom(currentSceneAtom);
   const [currentProgress] = useAtom(currentProgressAtom);
 
-  const shouldAnimateLandingPage = currentScene === 1;
-
-  const [opacity, setOpacity] = useState(1);
+  const shouldAnimateLandingPage = currentProgress >=  97.5;
 
   const lottieRef = useRef();
 
@@ -24,20 +22,11 @@ export default function LandingPage() {
     }
   }, [lottieRef]);
 
-  useEffect(() => {
-    if (currentProgress >= 95) {
-      const calculateOpacity = () => (currentProgress - 95) / 5;
-      setOpacity(calculateOpacity);
-    }
-  });
-
   return (
     <>
-      <div
-        className={`pointer-events-none absolute z-10 text-accent-1 w-screen h-screen grid grid-cols-2 gap-x-32 px-10 items-center ${
-          shouldAnimateLandingPage ? "" : "hidden"
-        }`}
-        style={{ opacity: opacity }}
+      <ContentContainer
+        customClassName={`pointer-events-none absolute z-10 text-accent-1 w-screen h-screen grid grid-cols-2 gap-x-32 px-10 py-28 items-center`}
+        shouldAnimate={shouldAnimateLandingPage}
       >
         <div className="flex flex-col z-10 max-w-xl justify-self-end">
           <h1 className="font-codech text-8xl text-accent-4">
@@ -69,7 +58,7 @@ export default function LandingPage() {
           </p>
         </div>
         
-        <img src="./portrait.png" alt="profile img" className="rounded-bl-full rounded-3xl max-w-xl"></img>
+        <img src="./portrait.png" alt="profile img" className="rounded-bl-full w-full h-auto max-w-xl"></img>
 
         <div className="absolute flex bottom-10 left-10">
           <h2 className="whitespace-pre text-accent-4 font-codecl text-xl">Scroll</h2>
@@ -81,7 +70,7 @@ export default function LandingPage() {
             className="h-1 self-end mb-2"
           />
         </div>
-      </div>
+      </ContentContainer>
     </>
   );
 }
