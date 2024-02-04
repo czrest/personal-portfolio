@@ -44,21 +44,24 @@ export default function TheatreCanvas() {
   }).sheet("Scene");
 
   const [currentScene] = useAtom(currentSceneAtom);
+  const [currentPage] = useAtom(currentPageAtom);
 
   const [planeLoaded] = useAtom(planeLoadedAtom);
 
+  const showLandingPage = currentPage === 1;
   const showSubtitle1 = currentScene >= 2 && currentScene <= 3;
   const showSubtitle2 = currentScene >= 4 && currentScene <= 6;
+  const showContactPage = currentPage === 8;
 
   return (
     <>
       {planeLoaded && (
         <>
           <div className="relative">
-            <LandingPage />
-            {showSubtitle1 && <SubtitleText>A web developer with a passion for digital art and design.</SubtitleText>}
-            {showSubtitle2 && <SubtitleText>Explore my work and learn more about me.</SubtitleText>}
-            <ContactPage />
+            {showLandingPage && <LandingPage />}
+            {showSubtitle1 && <SubtitleText>I thrive on turning ideas into reality.</SubtitleText>}
+            {showSubtitle2 && <SubtitleText>Immersing creativity into code.</SubtitleText>}
+            {showContactPage && <ContactPage />}
           </div>
         </>
       )}
