@@ -74,31 +74,31 @@ export default function SectionHtml() {
           </section>
           <section
             ref={sections.projects}
-            className="w-screen h-screen grid grid-cols-2 gap-x-20 py-40 px-10 items-center"
+            className="w-screen h-screen grid grid-cols-2 gap-x-20 py-40 px-10"
           >
             <ContentContainer
-              customClassName="flex flex-col group rounded-3xl max-w-md border border-accent-1 backdrop-blur-sm duration-500 hover:bg-primary"
+              customClassName="mx-auto my-auto flex flex-col group rounded-3xl w-fit border border-accent-1 backdrop-blur-sm duration-500 hover:bg-primary"
               shouldAnimate
             >
-              <div className="col-span-2"><img src="./" alt="project image" className="h-32 w-full rounded-t-3xl opacity-80 contrast-120 group-hover:opacity-100 duration-500"/></div>
+              <div className="col-span-2"><img src="./E-wasteManager.png" alt="project image" className="object-cover h-32 w-full rounded-t-3xl opacity-80 contrast-120 group-hover:opacity-100 duration-500"/></div>
               <div className="flex flex-row justify-between items-center p-3">
                 <h1 className="text-lg font-codecb text-accent-1 ">E-waste Manager</h1>
-                <div className="flex flex-cols justify-self-end">
+                <div className="flex flex-cols">
                   <ChipsText value={`Java`} />
                   <ChipsText value={`Firebase`} />
                   <ChipsText value={`Android Studio`} />
                 </div>
               </div>
             </ContentContainer>
-
+            
             <ContentContainer
-              customClassName="flex flex-col group rounded-3xl max-w-md border border-accent-1 backdrop-blur-sm duration-500 hover:bg-primary"
+              customClassName="mx-auto my-auto flex flex-col group rounded-3xl w-fit border border-accent-1 backdrop-blur-sm duration-500 hover:bg-primary"
               shouldAnimate
             >
-              <div className="col-span-2"><img src="./PersonalTour.png" alt="project image" className="h-32 w-full rounded-t-3xl opacity-80 contrast-120 group-hover:opacity-100 duration-500"/></div>
+              <div className="col-span-2"><img src="./PersonalTour.png" alt="project image" className="object-cover h-32 w-full rounded-t-3xl opacity-80 contrast-120 group-hover:opacity-100 duration-500"/></div>
               <div className="flex flex-row justify-between items-center p-3">
                 <h1 className="text-lg font-codecb text-accent-1 ">Personal Tour App</h1>
-                <div className="flex flex-cols justify-self-end">
+                <div className="flex flex-cols">
                   <ChipsText value={`Java`} />
                   <ChipsText value={`Firebase`} />
                   <ChipsText value={`Android Studio`} />

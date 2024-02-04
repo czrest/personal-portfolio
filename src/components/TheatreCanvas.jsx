@@ -51,7 +51,7 @@ export default function TheatreCanvas() {
   const showLandingPage = currentPage === 1;
   const showSubtitle1 = currentScene >= 2 && currentScene <= 3;
   const showSubtitle2 = currentScene >= 4 && currentScene <= 6;
-  const showContactPage = currentPage === 8;
+  const showContactPage = currentPage >= 8;
 
   return (
     <>
