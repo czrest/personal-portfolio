@@ -16,7 +16,7 @@ import {
 import CinematicBar from "./CinematicBar";
 
 import PaperPlaneLogo from "../icons/paperplanelogo";
-import MagneticHover from "./MagneticHover";
+import MagneticHover from "./placeholders/MagneticHover"
 
 export default function NavigationHeader() {
   const [currentScene] = useAtom(currentSceneAtom);

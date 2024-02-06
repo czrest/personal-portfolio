@@ -6,7 +6,7 @@ import { TypeAnimation } from "react-type-animation";
 import Lottie from "lottie-react";
 import animationData from "../../icons/scrollLottie.json";
 import { useEffect, useRef, useState } from "react";
-import ContentContainer from "../ContentContainer";
+import ContentContainer from "../placeholders/ContentContainer";
 
 export default function LandingPage() {
   const [currentScene] = useAtom(currentSceneAtom);

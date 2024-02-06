@@ -1,5 +1,5 @@
 import { useScroll, Scroll } from "@react-three/drei";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useAtom } from "jotai";
 
 import {
@@ -7,10 +7,12 @@ import {
   isButtonPressed,
   currentSceneAtom,
   currentPageAtom,
+  currentProgressAtom,
 } from "../GlobalState";
-import ContentContainer from "./ContentContainer";
-import HoverText from "./HoverText";
-import ChipsText from "./ChipsText";
+import ContentContainer from "./placeholders/ContentContainer";
+import HoverText from "./placeholders/HoverText";
+import ChipsText from "./placeholders/ChipsText";
+import Project from "./placeholders/Project";
 
 export default function SectionHtml() {
   const scroll = useScroll();
@@ -20,6 +22,13 @@ export default function SectionHtml() {
 
   const [currentScene] = useAtom(currentSceneAtom);
   const [currentPage] = useAtom(currentPageAtom);
+  const [currentProgress] = useAtom(currentProgressAtom);
+
+  const [hoveredProject, setHoveredProject] = useState(null);
+
+  const handleMouseEnter = (projectName) => {
+    setHoveredProject(projectName);
+  };
 
   const sections = {
     welcome: useRef(null),
@@ -37,19 +46,18 @@ export default function SectionHtml() {
     });
   };
 
-  // const data = useScroll();
-  // const scaleX = useSpring(scrollYProgress, {
-  //   stiffness: 100,
-  //   damping: 30,
-  //   restDelta: 0.001,
-  // });
-
   useEffect(() => {
     scrollToRef(sections[scrollToPage]);
   }, [scrollToPage, buttomPressed]);
 
   const shouldAnimateSkills1 = currentScene >= 11 && currentScene <= 12;
   const shouldAnimateSkills2 = currentScene >= 12 && currentScene <= 13;
+  const showProjects = currentPage >= 4 && currentPage <= 6;
+  const showProject1 = currentProgress <= 52 && currentProgress >= 32;
+
+  useEffect(() => {
+    setHoveredProject(null);
+  }, [showProjects]);
 
   return (
     <>
@@ -74,37 +82,51 @@ export default function SectionHtml() {
           </section>
           <section
             ref={sections.projects}
-            className="w-screen h-screen grid grid-cols-2 gap-x-20 py-40 px-10"
+            className="w-screen h-screen flex items-center justify-center py-40 px-10"
           >
-            <ContentContainer
-              customClassName="mx-auto my-auto flex flex-col group rounded-3xl w-fit border border-accent-1 backdrop-blur-sm duration-500 hover:bg-primary"
-              shouldAnimate
-            >
-              <div className="col-span-2"><img src="./E-wasteManager.png" alt="project image" className="object-cover h-32 w-full rounded-t-3xl opacity-80 contrast-120 group-hover:opacity-100 duration-500"/></div>
-              <div className="flex flex-row justify-between items-center p-3">
-                <h1 className="text-lg font-codecb text-accent-1 ">E-waste Manager</h1>
-                <div className="flex flex-cols">
-                  <ChipsText value={`Java`} />
-                  <ChipsText value={`Firebase`} />
-                  <ChipsText value={`Android Studio`} />
-                </div>
-              </div>
-            </ContentContainer>
-            
-            <ContentContainer
-              customClassName="mx-auto my-auto flex flex-col group rounded-3xl w-fit border border-accent-1 backdrop-blur-sm duration-500 hover:bg-primary"
-              shouldAnimate
-            >
-              <div className="col-span-2"><img src="./PersonalTour.png" alt="project image" className="object-cover h-32 w-full rounded-t-3xl opacity-80 contrast-120 group-hover:opacity-100 duration-500"/></div>
-              <div className="flex flex-row justify-between items-center p-3">
-                <h1 className="text-lg font-codecb text-accent-1 ">Personal Tour App</h1>
-                <div className="flex flex-cols">
-                  <ChipsText value={`Java`} />
-                  <ChipsText value={`Firebase`} />
-                  <ChipsText value={`Android Studio`} />
-                </div>
-              </div>
-            </ContentContainer>
+            {showProjects && <div className="grid grid-cols-2 gap-x-20 gap-y-10 w-fit">
+
+              <Project
+                title={"E-Waste Manager Android"}
+                technologies={["Java", "Firebase", "Android Studio"]}
+                imgsrc={"./E-wasteManager.png"}
+                showProject={showProject1}
+                onMouseEnter={() => handleMouseEnter('project1')}
+                active={hoveredProject === 'project1'}
+                customClassName={'self-end'}
+              />
+
+              <Project
+                title={"Personal Tour App Android"}
+                technologies={["Java", "Firebase", "Android Studio"]}
+                imgsrc={"./PersonalTour.png"}
+                showProject={showProject1}
+                onMouseEnter={() => handleMouseEnter('project2')}
+                active={hoveredProject === 'project2'}
+                customClassName={'self-end'}
+              />
+
+              <Project
+                title={"Three.js Projects"}
+                technologies={["React", "R3F", "Three.js", "Theatre.js", "Blender"]}
+                imgsrc={"./ThreeJS.png"}
+                showProject={showProject1}
+                onMouseEnter={() => handleMouseEnter('project3')}
+                active={hoveredProject === 'project3'}
+                customClassName={'self-top'}
+              />
+
+              <Project
+                title={"Creative Projects"}
+                technologies={["Photoshop", "Blender", "Premiere Pro"]}
+                imgsrc={"./Creative.png"}
+                showProject={showProject1}
+                onMouseEnter={() => handleMouseEnter('project4')}
+                active={hoveredProject === 'project4'}
+                customClassName={'self-top'}
+              />
+
+            </div>}
           </section>
           <section
             ref={sections.skills}

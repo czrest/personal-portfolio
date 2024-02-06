@@ -59,8 +59,8 @@ export default function TheatreCanvas() {
         <>
           <div className="relative">
             {showLandingPage && <LandingPage />}
-            {showSubtitle1 && <SubtitleText>I thrive on turning ideas into reality.</SubtitleText>}
-            {showSubtitle2 && <SubtitleText>Immersing creativity into code.</SubtitleText>}
+            {showSubtitle1 && <SubtitleText>Welcome to my 3D journey.</SubtitleText>}
+            {showSubtitle2 && <SubtitleText>Bringing creative visions to life.</SubtitleText>}
             {showContactPage && <ContactPage />}
           </div>
         </>

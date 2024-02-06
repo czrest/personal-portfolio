@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
-import ContentContainer from "../ContentContainer";
+import ContentContainer from "../placeholders/ContentContainer";
 import GithubIcon from "../../icons/github";
 import LinkedinIcon from "../../icons/linkedin";
 import MessengerIcon from "../../icons/messenger";
-import Links from "../Links";
+import Links from "../placeholders/Links";
 import EmailIcon from "../../icons/email";
 import { Tooltip, Button } from "@material-tailwind/react";
 
