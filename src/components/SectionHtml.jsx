@@ -82,9 +82,9 @@ export default function SectionHtml() {
           </section>
           <section
             ref={sections.projects}
-            className="w-screen h-screen flex items-center justify-center py-40 px-10"
+            className="w-screen h-screen flex items-center justify-center py-40 px-10 bg-black"
           >
-            {showProjects && <div className="grid grid-cols-2 gap-x-20 gap-y-10 w-fit">
+            {showProjects && <div className="grid grid-cols-1 gap-x-20 gap-y-10 w-fit">
 
               <Project
                 title={"E-Waste Manager Android"}
