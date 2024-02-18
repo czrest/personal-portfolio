@@ -69,7 +69,7 @@ export default function TheatreCanvas() {
         <Suspense fallback={null}>
           <ScrollControls
             pages={8}
-            distance={0.4}
+            distance={1}
             damping={0.5}
             maxSpeed={0.8}
             horizontal

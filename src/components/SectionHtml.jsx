@@ -41,7 +41,7 @@ export default function SectionHtml() {
 
   const scrollToRef = (ref) => {
     scroll.el.scrollTo({
-      left: ref?.current?.offsetLeft * 0.31432,
+      left: ref?.current?.offsetLeft,
       behavior: "smooth",
     });
   };
@@ -53,6 +53,7 @@ export default function SectionHtml() {
   const shouldAnimateSkills1 = currentScene >= 11 && currentScene <= 12;
   const shouldAnimateSkills2 = currentScene >= 12 && currentScene <= 13;
   const showProjects = currentPage >= 4 && currentPage <= 6;
+  const blackScreen = currentScene >= 9 && currentScene <= 10;
   const showProject1 = currentProgress <= 52 && currentProgress >= 32;
 
   useEffect(() => {
@@ -62,7 +63,7 @@ export default function SectionHtml() {
   return (
     <>
       <Scroll html>
-        <div className="flex flex-row cursor-default">
+        <div className={`flex flex-row cursor-default`}>
           <section
             ref={sections.welcome}
             className="w-screen h-screen grid grid-flow-col gap-4 justify-items-stretch content-center"
@@ -71,7 +72,7 @@ export default function SectionHtml() {
           <section className="w-screen h-screen relative flex flex-col justify-center items-center"></section>
           <section
             ref={sections.about}
-            className="w-screen h-screen grid grid-flow-col gap-4 justify-items-stretch content-center"
+            className="w-screen h-screen flex justify-center items-center "
           >
             <ContentContainer
               customClassName="flex justify-center"
@@ -80,124 +81,128 @@ export default function SectionHtml() {
               about
             </ContentContainer>
           </section>
-          <section
-            ref={sections.projects}
-            className="w-screen h-screen flex items-center justify-center py-40 px-10 bg-black"
-          >
-            {showProjects && <div className="grid grid-cols-1 gap-x-20 gap-y-10 w-fit">
+          <div className="bg-black flex ">
+            <section
+              ref={sections.projects}
+              className="w-screen h-screen flex items-center justify-center py-40 px-10"
+            >
+              <div className="flex flex-col mr-32">
+                <h1 className="font-codecl text-accent-5 mb-10">Projects</h1>
+                <h2 className="font-codecb text-accent-5 text-xl">This is a test</h2>
+              </div>
+              <div className="flex flex-col">
+                {showProjects && (
+                  <div className="grid grid-cols-2 mb-5 gap-5 w-fit">
+                    <Project
+                      title={"E-Waste Manager Android"}
+                      technologies={["Java", "Firebase", "Android Studio"]}
+                      imgsrc={"./E-wasteManager.png"}
+                      showProject={showProject1}
+                      customClassName={""}
+                    />
 
-              <Project
-                title={"E-Waste Manager Android"}
-                technologies={["Java", "Firebase", "Android Studio"]}
-                imgsrc={"./E-wasteManager.png"}
-                showProject={showProject1}
-                onMouseEnter={() => handleMouseEnter('project1')}
-                active={hoveredProject === 'project1'}
-                customClassName={'self-end'}
-              />
-
-              <Project
-                title={"Personal Tour App Android"}
-                technologies={["Java", "Firebase", "Android Studio"]}
-                imgsrc={"./PersonalTour.png"}
-                showProject={showProject1}
-                onMouseEnter={() => handleMouseEnter('project2')}
-                active={hoveredProject === 'project2'}
-                customClassName={'self-end'}
-              />
-
-              <Project
-                title={"Three.js Projects"}
-                technologies={["React", "R3F", "Three.js", "Theatre.js", "Blender"]}
-                imgsrc={"./ThreeJS.png"}
-                showProject={showProject1}
-                onMouseEnter={() => handleMouseEnter('project3')}
-                active={hoveredProject === 'project3'}
-                customClassName={'self-top'}
-              />
-
-              <Project
-                title={"Creative Projects"}
-                technologies={["Photoshop", "Blender", "Premiere Pro"]}
-                imgsrc={"./Creative.png"}
-                showProject={showProject1}
-                onMouseEnter={() => handleMouseEnter('project4')}
-                active={hoveredProject === 'project4'}
-                customClassName={'self-top'}
-              />
-
-            </div>}
-          </section>
-          <section
-            ref={sections.skills}
-            className="w-screen h-screen py-40 px-10 bg-black z-50 flex items-center justify-center"
-          >
-            <div className="grid grid-cols-2 gap-y-10 gap-x-44 w-10/12 text-accent-5">
-              <ContentContainer
-                customClassName={`flex flex-col justify-self-end items-end max-w-lg`}
-                shouldAnimate={shouldAnimateSkills1}
-              >
-                <div className="w-11/12">
-                  <h1 className="font-codecr text-5xl text-accent-3">
-                    What I can do.
-                  </h1>
-                  <p className="whitespace-pre-line font-codecl text-lg">
-                    I specialize in design and web-related aspects, aiming to
-                    provide a unique and uplifting digital experience.
-                  </p>
-                </div>
-              </ContentContainer>
-
-              <ContentContainer
-                customClassName={`flex flex-col max-w-lg`}
-                shouldAnimate={shouldAnimateSkills2}
-              >
-                <div className="w-11/12">
-                  <HoverText>Web Development</HoverText>
-                  <HoverText>Web Design</HoverText>
-                  <HoverText>UI/UX Design</HoverText>
-                  <HoverText>Digital Editing</HoverText>
-                </div>
-              </ContentContainer>
-
-              <ContentContainer
-                customClassName={`flex flex-col delay-100 justify-self-end items-end max-w-lg`}
-                shouldAnimate={shouldAnimateSkills1}
-              >
-                <div className="w-11/12">
-                  <h1 className=" font-codecr text-5xl text-accent-3">
-                    My tools.
-                  </h1>
-                  <p className="whitespace-pre-line font-codecl text-lg">
-                    These are the instruments that drive my creative process. I
-                    always explore emerging technologies, constantly seeking
-                    opportunities to expand my skill set and elevate the quality
-                    of my work.
-                  </p>
-                </div>
-              </ContentContainer>
-
-              <ContentContainer
-                customClassName={`flex flex-col delay-100 max-w-lg`}
-                shouldAnimate={shouldAnimateSkills2}
-              >
-                <div className="w-11/12 flex flex-row">
-                  <div>
-                    <HoverText>HTML</HoverText>
-                    <HoverText>CSS</HoverText>
-                    <HoverText>Javascript</HoverText>
-                    <HoverText>React</HoverText>
+                    <Project
+                      title={"Personal Tour App Android"}
+                      technologies={["Java", "Firebase", "Android Studio"]}
+                      imgsrc={"./PersonalTour.png"}
+                      showProject={showProject1}
+                      customClassName={""}
+                    />
                   </div>
-                  <div>
-                    <HoverText>Photoshop</HoverText>
-                    <HoverText>Illustrator</HoverText>
-                    <HoverText>Blender</HoverText>
-                    <HoverText>VS Code</HoverText>
+                )}
+
+                {showProjects && (
+                  <div className="grid grid-cols-2 ml-48 gap-5 w-fit">
+                    <Project
+                      title={"E-Waste Manager Android"}
+                      technologies={["Java", "Firebase", "Android Studio"]}
+                      imgsrc={"./E-wasteManager.png"}
+                      showProject={showProject1}
+                      customClassName={""}
+                    />
+
+                    <Project
+                      title={"Personal Tour App Android"}
+                      technologies={["Java", "Firebase", "Android Studio"]}
+                      imgsrc={"./PersonalTour.png"}
+                      showProject={showProject1}
+                      customClassName={""}
+                    />
                   </div>
-                </div>
-              </ContentContainer>
-            </div>
-          </section>
+                )}
+              </div>
+            </section>
+            <section
+              ref={sections.skills}
+              className="w-screen h-screen py-40 px-10 z-50 flex items-center justify-center"
+            >
+              <div className="grid grid-cols-2 gap-y-10 gap-x-44 w-10/12 text-accent-5">
+                <ContentContainer
+                  customClassName={`flex flex-col justify-self-end items-end max-w-lg`}
+                  shouldAnimate={shouldAnimateSkills1}
+                >
+                  <div className="w-11/12">
+                    <h1 className="font-codecr text-5xl text-accent-3">
+                      What I can do.
+                    </h1>
+                    <p className="whitespace-pre-line font-codecl text-lg">
+                      I specialize in design and web-related aspects, aiming to
+                      provide a unique and uplifting digital experience.
+                    </p>
+                  </div>
+                </ContentContainer>
+
+                <ContentContainer
+                  customClassName={`flex flex-col max-w-lg`}
+                  shouldAnimate={shouldAnimateSkills2}
+                >
+                  <div className="w-11/12">
+                    <HoverText>Web Development</HoverText>
+                    <HoverText>Web Design</HoverText>
+                    <HoverText>UI/UX Design</HoverText>
+                    <HoverText>Digital Editing</HoverText>
+                  </div>
+                </ContentContainer>
+
+                <ContentContainer
+                  customClassName={`flex flex-col delay-100 justify-self-end items-end max-w-lg`}
+                  shouldAnimate={shouldAnimateSkills1}
+                >
+                  <div className="w-11/12">
+                    <h1 className=" font-codecr text-5xl text-accent-3">
+                      My tools.
+                    </h1>
+                    <p className="whitespace-pre-line font-codecl text-lg">
+                      These are the instruments that drive my creative process.
+                      I always explore emerging technologies, constantly seeking
+                      opportunities to expand my skill set and elevate the
+                      quality of my work.
+                    </p>
+                  </div>
+                </ContentContainer>
+
+                <ContentContainer
+                  customClassName={`flex flex-col delay-100 max-w-lg`}
+                  shouldAnimate={shouldAnimateSkills2}
+                >
+                  <div className="w-11/12 flex flex-row">
+                    <div>
+                      <HoverText>HTML</HoverText>
+                      <HoverText>CSS</HoverText>
+                      <HoverText>Javascript</HoverText>
+                      <HoverText>React</HoverText>
+                    </div>
+                    <div>
+                      <HoverText>Photoshop</HoverText>
+                      <HoverText>Illustrator</HoverText>
+                      <HoverText>Blender</HoverText>
+                      <HoverText>VS Code</HoverText>
+                    </div>
+                  </div>
+                </ContentContainer>
+              </div>
+            </section>
+          </div>
           <section
             ref={sections.education}
             className="w-screen h-screen grid grid-flow-col gap-4 justify-items-stretch content-center"
