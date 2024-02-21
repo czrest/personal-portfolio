@@ -86,10 +86,10 @@ export default function SectionHtml() {
               ref={sections.projects}
               className="w-screen h-screen flex items-center justify-center py-40 px-10"
             >
-              <div className="flex flex-col mr-32">
+              {/* <div className="flex flex-col mr-32">
                 <h1 className="font-codecl text-accent-5 mb-10">Projects</h1>
                 <h2 className="font-codecb text-accent-5 text-xl">This is a test</h2>
-              </div>
+              </div> */}
               <div className="flex flex-col">
                 {showProjects && (
                   <div className="grid grid-cols-2 mb-5 gap-5 w-fit">
