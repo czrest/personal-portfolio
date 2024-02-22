@@ -14,7 +14,6 @@
     "@react-three/drei": "^9.92.5",
     "@react-three/fiber": "^8.15.12",
     "@react-three/postprocessing": "^2.15.11",
-    "@stichiboi/react-elegant-mouse-trail": "^1.0.1",
     "@theatre/core": "^0.7.0",
     "@theatre/r3f": "^0.7.0",
     "@theatre/studio": "^0.7.0",

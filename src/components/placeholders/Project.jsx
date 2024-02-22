@@ -64,7 +64,7 @@ export default function Project({
               damping: 0,
               mass: 0.1,
             }}>
-              <Plus className={`bg-accent-3 rounded-full duration-300 group-hover:bg-transparent`}/>
+              <Plus className={`bg-accent-3 rounded-full duration-1000 group-hover:bg-transparent`}/>
           </motion.div>
         </div>
       </div>
