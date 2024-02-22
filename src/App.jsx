@@ -6,6 +6,7 @@ import TheatreCanvas from "./components/TheatreCanvas";
 import { useState, useEffect } from "react";
 import { planeLoadedAtom, worldLoadedAtom, dataThemeAtom } from "./GlobalState";
 import { useAtom } from "jotai";
+import { MouseTrail } from "@stichiboi/react-elegant-mouse-trail";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -52,6 +53,7 @@ function App() {
 
   return (
     <>
+      <MouseTrail strokeColor={"#000"} lineWidthStart={20} lineDuration={5}/>
       <LoadingScreen state={!allLoaded} finish={allLoaded? "h-fit p-2 border ease-out ":"h-px border-t ease-in"} progress={`${loading ? "w-0" : loadingprogress}`}/>
 
       {loading ? null : (
