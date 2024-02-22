@@ -70,10 +70,10 @@ export default function NavigationHeader() {
         </ThemeProvider>
 
         <a onClick={() => goToPage("welcome")}
-          className={`absolute items-center justify-center w-14 h-14 left-10 flex hover:shadow-lg hover:shadow-secondary/50 hover:contrast-125 rounded-md bg-secondary z-20 ${
+          className={`absolute items-center justify-center w-14 h-14 left-10 flex hover:shadow-lg hover:shadow-secondary/50 hover:contrast-125 rounded-md bg-secondary z-20 top-6 ${
             shouldAnimateCinematic
-              ? "top-6 opacity-100 ease-in"
-              : "top-14 opacity-30 ease-out hover:opacity-100"
+            ? "opacity-100 ease-in"
+            : "opacity-30 ease-out hover:opacity-100"
           } duration-700`}
         >
           <MagneticHover
@@ -97,10 +97,10 @@ export default function NavigationHeader() {
         >
           <button
             onClick={()=>changeTheme()}
-            className={`absolute items-center justify-center w-14 h-14 right-10 flex hover:contrast-125 rounded-md bg-secondary z-30 ${
+            className={`absolute items-center justify-center w-14 h-14 right-10 flex hover:contrast-125 rounded-md bg-secondary z-30 top-6 ${
               shouldAnimateCinematic
-                ? "top-6 opacity-100 ease-in"
-                : "top-14 opacity-30 ease-out hover:opacity-100"
+              ? "opacity-100 ease-in"
+              : "opacity-30 ease-out hover:opacity-100"
             } duration-700`}
           >
             <MagneticHover
@@ -118,11 +118,7 @@ export default function NavigationHeader() {
             ? "bg-opacity-80 ease-in duration-700"
             : "bg-opacity-0 ease-out duration-700"
         } hover:bg-opacity-100`}
-        customClassHeader={`${
-          shouldAnimateCinematic
-            ? "top-6 ease-in duration-700"
-            : "top-14 ease-out duration-700"
-        } group`}
+        customClassHeader={`top-6 group`}
       >
         <NavigationMenu
           customClassName={`${

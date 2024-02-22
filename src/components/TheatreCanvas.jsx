@@ -36,7 +36,7 @@ import paperAnimation from "../paperAnimation.json";
 import ContactPage from "./pages/ContactPage";
 import { THEME } from "../data";
 import LandingPage from "./pages/LandingPage";
-import SubtitleText from "./pages/SubtitleText";
+import SubtitleText from "./placeholders/SubtitleText";
 
 export default function TheatreCanvas() {
   const sheet = getProject("Project Animation", {
