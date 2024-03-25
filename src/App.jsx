@@ -56,7 +56,7 @@ function App() {
 
       {loading ? null : (
         <>
-          <NavigationHeader />
+          {/* <NavigationHeader /> */}
           <TheatreCanvas />
         </>
       )}
