@@ -10,7 +10,7 @@ export const planeLoadedAtom = atom(false);
 
 export const worldLoadedAtom = atom(false);
 
-export const scrollToPageAtom = atom("welcome");
+export const scrollToPageAtom = atom(null);
 
 export const isButtonPressed = atom(false);
 

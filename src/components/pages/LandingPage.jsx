@@ -10,9 +10,9 @@ import ContentContainer from "../placeholders/ContentContainer";
 
 export default function LandingPage() {
   const [currentScene] = useAtom(currentSceneAtom);
-  const [currentProgress] = useAtom(currentProgressAtom);
+  // const [currentProgress] = useAtom(currentProgressAtom);
 
-  const shouldAnimateLandingPage = currentProgress >=  97.5;
+  // const shouldAnimateLandingPage = currentScene >= 1;
 
   const lottieRef = useRef();
 
@@ -26,7 +26,7 @@ export default function LandingPage() {
     <>
       <ContentContainer
         customClassName={`pointer-events-none absolute z-10 text-accent-1 w-screen h-screen grid grid-cols-2 gap-x-32 px-10 py-28 items-center`}
-        shouldAnimate={shouldAnimateLandingPage}
+        shouldAnimate={true}
       >
         <div className="flex flex-col z-10 max-w-xl justify-self-end">
           <h1 className="font-codech text-8xl text-accent-4">
@@ -58,7 +58,7 @@ export default function LandingPage() {
           </p>
         </div>
         
-        <img src="./portrait.png" alt="profile img" className="rounded-bl-full w-full h-auto max-w-xl"></img>
+        {/* <img src="./portrait.png" alt="profile img" className="rounded-bl-full w-full h-auto relative max-w-xl"></img> */}
 
         <div className="absolute flex bottom-10 left-10">
           <h2 className="whitespace-pre text-accent-4 font-codecl text-xl">Scroll</h2>

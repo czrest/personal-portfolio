@@ -4,12 +4,12 @@
 
 @layer base {
   :root {
-    --color-primary: 60deg 100% 98%;
-    --color-secondary: 60deg 6% 22%;
-    --color-tertiary: 81deg 76% 55%;
+    --color-primary: 10deg 50% 95%;
+    --color-secondary: 31deg 17% 66%;
+    --color-tertiary: 347deg 16% 22%;
     --color-accent1: 0deg 0% 5%;
     --color-accent2: 0deg 0% 95%;
-    --color-accent3: 81deg 76% 49%;
+    --color-accent3: 34deg 63% 66%;
 
     --color-accent4: 0deg 0% 5%;
     --color-accent5: 0deg 0% 95%;
@@ -54,11 +54,11 @@ body,
 }
 
 .custom-loadingBottom {
-  bottom: -70%;
+  bottom: -100%;
 }
 
 .custom-loadingTop {
-  top: -70%;
+  top: -100%;
 }
 
 .custom-width {

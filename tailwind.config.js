@@ -1,7 +1,10 @@
 const withMT = require("@material-tailwind/react/utils/withMT");
 
 module.exports = withMT({
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: [
+    './src/**/*.{js,jsx,ts,tsx}',
+    '.src/lib/**/*.js,ts,jsx,tsx,mdx'
+  ],
   theme: {
     extend: {
       height: {

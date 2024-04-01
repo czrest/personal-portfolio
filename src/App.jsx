@@ -1,6 +1,4 @@
 import LoadingScreen from "./components/LoadingScreen";
-import NavigationHeader from "./components/NavigationHeader";
-import NavigationMenu from "./components/NavigationMenu";
 import TheatreCanvas from "./components/TheatreCanvas";
 
 import { useState, useEffect } from "react";
@@ -56,7 +54,6 @@ function App() {
 
       {loading ? null : (
         <>
-          {/* <NavigationHeader /> */}
           <TheatreCanvas />
         </>
       )}

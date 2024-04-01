@@ -1,15 +1,13 @@
 import ChipsText from "./ChipsText";
 import { motion } from "framer-motion";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Plus from "../../icons/plus";
 
-export default function Project({
+export default function ProjectContainer({
   technologies,
   title,
   imgsrc,
   showProject = false,
-  active = false,
-  onMouseEnter,
   customClassName,
 }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -32,22 +30,13 @@ export default function Project({
   return (
     <>
       <div
-        className={` overflow-hidden cursor-none ${customClassName} w-96 h-56 flex flex-col group rounded-md border border-accent-5 backdrop-blur-sm duration-500 ${
-          showProject ? "opacity-100 ease-in" : "ease-out opacity-0"
+        className={`overflow-hidden cursor-none ${customClassName} h-auto md:max-w-xl rounded-lg object-cover object-center flex flex-col group backdrop-blur-sm duration-500 hover:bg-secondary/20 hover:shadow-xl hover:shadow-secondary/10 ease-in-out  ${
+          showProject ? "opacity-100" : " opacity-0 pointer-events-none"
         } `}
         onMouseMove={handleMouse}
         onMouseLeave={reset}
-        onMouseOut={reset}
       >
-        {/* <div className="col-span-2">
-          <img
-            src={imgsrc}
-            alt={`${title} image`}
-            className={`object-cover ${
-              active ? " opacity-80 h-32 ease-out" : "h-0 opacity-0 ease-in"
-            } w-full rounded-t-3xl contrast-120 group-hover:opacity-100 group-hover:contrast-100`}
-          />
-        </div> */}
+        <img className="h-auto w-full " src={imgsrc} alt="Project image" />
         <div className="flex flex-col p-5 w-full h-full">
           <h1 className="text-lg font-codecb text-accent-5 m-2">{title}</h1>
           <div className="flex flex-row">
@@ -56,15 +45,18 @@ export default function Project({
             ))}
           </div>
           <motion.div
-            className="h-2 w-2 opacity-90 rounded-full absolute bottom-5 right-5 group-hover:h-20 group-hover:w-20 group-hover:shadow-lg group-hover:shadow-tertiary/50 duration-100 ease-out"
+            className="h-2 w-2 opacity-90 rounded-full absolute bottom-5 right-5 group-hover:h-32 group-hover:w-32 group-hover:shadow-lg group-hover:shadow-accent-3/50 duration-300 ease-out"
             ref={ref}
             animate={{ x, y }}
             transition={{
-              stiffness: 100,
-              damping: 0,
+              stiffness: 150,
+              damping: 10,
               mass: 0.1,
-            }}>
-              <Plus className={`bg-accent-3 rounded-full duration-300 group-hover:bg-transparent`}/>
+            }}
+          >
+            <Plus
+              className={`bg-accent-3 rounded-full duration-300 group-hover:bg-transparent fill-accent-3`}
+            />
           </motion.div>
         </div>
       </div>

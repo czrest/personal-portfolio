@@ -6,7 +6,7 @@ export default function Plus({ ...props }) {
   const [dataTheme] = useAtom(dataThemeAtom);
 
   return (
-    <svg viewBox="0 0 438.533 438.533" fill={THEME[dataTheme].accent} { ...props }>
+    <svg viewBox="0 0 438.533 438.533" { ...props }>
       <g>
         <path
           d="M409.133,109.203c-19.608-33.592-46.205-60.189-79.798-79.796C295.736,9.801,259.058,0,219.273,0

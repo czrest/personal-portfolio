@@ -37,6 +37,9 @@ import ContactPage from "./pages/ContactPage";
 import { THEME } from "../data";
 import LandingPage from "./pages/LandingPage";
 import SubtitleText from "./placeholders/SubtitleText";
+import Navigation from "./Navigation";
+import SkillsPage from "./pages/SkillsPage";
+import EducationPage from "./pages/EducationPage";
 
 export default function TheatreCanvas() {
   const sheet = getProject("Project Animation", {
@@ -51,16 +54,19 @@ export default function TheatreCanvas() {
   const showLandingPage = currentPage === 1;
   const showSubtitle1 = currentScene >= 2 && currentScene <= 3;
   const showSubtitle2 = currentScene >= 4 && currentScene <= 6;
-  const showContactPage = currentPage >= 8;
+  const showEducationPage = currentPage === 9;
+  const showContactPage = currentPage >= 10;
 
   return (
     <>
       {planeLoaded && (
         <>
+          <Navigation/>
           <div className="relative">
             {showLandingPage && <LandingPage />}
-            {showSubtitle1 && <SubtitleText>Welcome to my 3D journey.</SubtitleText>}
-            {showSubtitle2 && <SubtitleText>Bringing creative visions to life.</SubtitleText>}
+            {/* {showSubtitle1 && <SubtitleText>Welcome to my 3D journey.</SubtitleText>}
+            {showSubtitle2 && <SubtitleText>Bringing creative visions to life.</SubtitleText>} */}
+            {showEducationPage && <EducationPage/>}
             {showContactPage && <ContactPage />}
           </div>
         </>
@@ -68,19 +74,18 @@ export default function TheatreCanvas() {
       <Canvas gl={{ preserveDrawingBuffer: true }}>
         <Suspense fallback={null}>
           <ScrollControls
-            pages={8}
+            pages={10}
             distance={1}
             damping={0.5}
             maxSpeed={0.8}
-            horizontal
           >
             <SheetProvider sheet={sheet}>
               <Scene />
 
               <SectionHtml />
-              {/* <EffectComposer disableNormalPass multisampling={4}>
-                <TiltShift2 blur={0} />
-              </EffectComposer> */}
+              <EffectComposer disableNormalPass multisampling={4}>
+                <TiltShift2 blur={0.05} />
+              </EffectComposer>
 
               <Preload all />
             </SheetProvider>

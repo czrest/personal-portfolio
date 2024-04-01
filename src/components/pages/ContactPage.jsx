@@ -37,7 +37,7 @@ export default function ContactPage() {
     <>
       <ContentContainer
         customClassName="pointer-events-none absolute z-10 text-accent-1 w-screen h-screen flex flex-col justify-center items-center"
-        shouldAnimate={shouldAnimateContact}
+        shouldAnimate={true}
       >
         <div className="absolute bottom-10 left-10">
           <h2 className="whitespace-pre font-codech text-xl">©2024  <span className="font-codecl">Samuel Torreda</span></h2>
@@ -66,7 +66,7 @@ export default function ContactPage() {
               shouldAnimateContact
                 ? "pointer-events-auto"
                 : "pointer-events-none"
-            } group lowercase font-codecl focus:ring-0 border-secondary rounded-md text-accent-1 hover:text-accent-5 hover:contrast-125 hover:bg-secondary hover:border-secondary`}
+            } group lowercase font-codecl focus:ring-0 border-secondary rounded-md text-accent-1 hover:text-accent-5 hover:contrast-125 hover:bg-tertiary hover:border-tertiary`}
           >
             <EmailIcon
               height={"25px"}
@@ -90,7 +90,7 @@ export default function ContactPage() {
             <MessengerIcon
               height={"40px"}
               width={"40px"}
-              className={`fill-accent-1 mr-3 group-hover:fill-secondary group-hover:shadow-md group-hover:shadow-secondary/50 p-1 rounded-xl duration-500`}
+              className={`fill-accent-1 mr-3 group-hover:fill-tertiary group-hover:shadow-md group-hover:shadow-tertiary/50 p-1 rounded-xl duration-500`}
             />
             <Links
               customClassName={`text-xl font-codecl`}
@@ -110,7 +110,7 @@ export default function ContactPage() {
             <LinkedinIcon
               height={"40px"}
               width={"40px"}
-              className={`fill-accent-1 mr-3 group-hover:fill-secondary group-hover:shadow-md group-hover:shadow-secondary/50 p-1 rounded-xl duration-500`}
+              className={`fill-accent-1 mr-3 group-hover:fill-tertiary group-hover:shadow-md group-hover:shadow-tertiary/50 p-1 rounded-xl duration-500`}
             />
             <Links
               customClassName={`text-xl font-codecl`}
@@ -130,7 +130,7 @@ export default function ContactPage() {
             <GithubIcon
               height={"40px"}
               width={"40px"}
-              className={`fill-accent-1 mr-3 group-hover:fill-secondary group-hover:shadow-md group-hover:shadow-secondary/50 p-1 rounded-xl duration-500`}
+              className={`fill-accent-1 mr-3 group-hover:fill-tertiary group-hover:shadow-md group-hover:shadow-tertiary/50 p-1 rounded-xl duration-500`}
             />
             <Links
               customClassName={`text-xl font-codecl`}
