@@ -30,13 +30,13 @@ export default function ProjectContainer({
   return (
     <>
       <div
-        className={`overflow-hidden cursor-none ${customClassName} h-auto md:max-w-xl rounded-lg object-cover object-center flex flex-col group backdrop-blur-sm duration-500 hover:bg-secondary/20 hover:shadow-xl hover:shadow-secondary/10 ease-in-out  ${
+        className={`overflow-hidden cursor-none ${customClassName} h-auto md:max-w-xl lg:max-w-full rounded-lg object-cover object-center flex flex-col group backdrop-blur-sm duration-500 hover:bg-secondary/20 hover:shadow-xl hover:shadow-secondary/10 ease-in-out  ${
           showProject ? "opacity-100" : " opacity-0 pointer-events-none"
         } `}
         onMouseMove={handleMouse}
         onMouseLeave={reset}
       >
-        <img className="h-auto w-full " src={imgsrc} alt="Project image" />
+        <img className="h-auto w-full group-hover:blur-sm duration-500" src={imgsrc} alt="Project image" />
         <div className="flex flex-col p-5 w-full h-full">
           <h1 className="text-lg font-codecb text-accent-5 m-2">{title}</h1>
           <div className="flex flex-row">
