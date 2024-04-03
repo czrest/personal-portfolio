@@ -30,13 +30,13 @@ export default function ProjectContainer({
   return (
     <>
       <div
-        className={`overflow-hidden cursor-none ${customClassName} h-auto md:max-w-xl lg:max-w-full rounded-lg object-cover object-center flex flex-col group backdrop-blur-sm duration-500 hover:bg-secondary/20 hover:shadow-xl hover:shadow-secondary/10 ease-in-out  ${
+        className={`overflow-hidden cursor-none ${customClassName} h-auto 2xl:max-w-2xl xl:max-w-xl lg:max-w-full rounded-lg object-cover object-center flex flex-col group backdrop-blur-sm duration-500 hover:bg-secondary/20 hover:shadow-xl hover:shadow-secondary/10 ease-in-out  ${
           showProject ? "opacity-100" : " opacity-0 pointer-events-none"
         } `}
         onMouseMove={handleMouse}
         onMouseLeave={reset}
       >
-        <img className="h-auto w-full group-hover:blur-sm duration-500" src={imgsrc} alt="Project image" />
+        <img className="xl:h-auto xl:w-full sm:h-56 h-20 w-screen object-none group-hover:blur-sm duration-500" src={imgsrc} alt="Project image" />
         <div className="flex flex-col p-5 w-full h-full">
           <h1 className="text-lg font-codecb text-accent-5 m-2">{title}</h1>
           <div className="flex flex-row">
@@ -45,7 +45,7 @@ export default function ProjectContainer({
             ))}
           </div>
           <motion.div
-            className="h-2 w-2 opacity-90 rounded-full absolute bottom-5 right-5 group-hover:h-32 group-hover:w-32 group-hover:shadow-lg group-hover:shadow-accent-3/50 duration-300 ease-out"
+            className="h-2 w-2 invisible xl:visible opacity-90 rounded-full absolute bottom-5 right-5 group-hover:h-32 group-hover:w-32 group-hover:shadow-lg group-hover:shadow-accent-3/50 duration-300 ease-out"
             ref={ref}
             animate={{ x, y }}
             transition={{
