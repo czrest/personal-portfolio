@@ -15,7 +15,7 @@ export default function SkillsPage() {
       <AnimatePresence>
         {showSkillPage && (
           <motion.div
-            className="absolute z-10 rounded-b-full bg-black w-screen h-screen flex items-center justify-center"
+            className="z-10 rounded-b-full bg-black w-full h-full flex items-center justify-center"
             initial={{ y: exitDirection ? "-100vh" : "100vh" }}
             animate={{ y: 0 }}
             exit={{ y: exitDirection ? "-100vh" : "100vh" }}

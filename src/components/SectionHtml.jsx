@@ -60,12 +60,11 @@ export default function SectionHtml() {
   return (
     <>
       <Scroll html>
-        <div className="flex flex-col">
           {sections.map((section) => (
             <SectionContainer
               key={section.id}
               ref={sectionRefs.current[section.id - 1]}
-              customClassName={`w-screen h-screen flex items-center justify-center 
+              customClassName={`h-svh w-screen flex items-center justify-center 
               ${section.id >= 6 && currentScene <= 16 ? "bg-black" : ""} 
               ${section.id === 6 ? "rounded-t-3xl" : ""}`}
               shouldAnimate
@@ -75,7 +74,6 @@ export default function SectionHtml() {
               {section.id ===8 && <SkillsPage/>}
             </SectionContainer>
           ))}
-        </div>
       </Scroll>
     </>
   );

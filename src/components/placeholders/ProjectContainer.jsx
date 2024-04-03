@@ -36,7 +36,7 @@ export default function ProjectContainer({
         onMouseMove={handleMouse}
         onMouseLeave={reset}
       >
-        <img className="xl:h-auto xl:w-full sm:h-56 h-20 w-screen object-none group-hover:blur-sm duration-500" src={imgsrc} alt="Project image" />
+        <img className="xl:h-auto xl:w-full sm:h-56 h-20 w-full object-none group-hover:blur-sm duration-500" src={imgsrc} alt="Project image" />
         <div className="flex flex-col p-5 w-full h-full">
           <h1 className="text-lg font-codecb text-accent-5 m-2">{title}</h1>
           <div className="flex flex-row">

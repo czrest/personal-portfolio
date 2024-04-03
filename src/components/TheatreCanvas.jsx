@@ -81,14 +81,15 @@ export default function TheatreCanvas() {
           >
             <SheetProvider sheet={sheet}>
               <Scene />
-
-              <SectionHtml />
               {/* <EffectComposer disableNormalPass multisampling={4}>
                 <TiltShift2 blur={0.05} />
               </EffectComposer> */}
 
               <Preload all />
             </SheetProvider>
+            
+
+            <SectionHtml />
           </ScrollControls>
         </Suspense>
       </Canvas>
