@@ -7,6 +7,7 @@ export default function ProjectContainer({
   technologies,
   title,
   imgsrc,
+  bgsrc,
   showProject = false,
   customClassName,
 }) {
@@ -26,6 +27,10 @@ export default function ProjectContainer({
   };
 
   const { x, y } = mousePosition;
+  
+  const handleClick = ()=>{
+    
+  };
 
   return (
     <>
@@ -33,10 +38,14 @@ export default function ProjectContainer({
         className={`overflow-hidden cursor-none ${customClassName} h-auto 2xl:max-w-2xl xl:max-w-xl lg:max-w-full rounded-lg object-cover object-center flex flex-col group backdrop-blur-sm duration-500 hover:bg-secondary/20 hover:shadow-xl hover:shadow-secondary/10 ease-in-out  ${
           showProject ? "opacity-100" : " opacity-0 pointer-events-none"
         } `}
+        onClick={()=>{}}
         onMouseMove={handleMouse}
         onMouseLeave={reset}
       >
-        <img className="xl:h-auto xl:w-full sm:h-56 h-20 w-full object-none group-hover:blur-sm duration-500" src={imgsrc} alt="Project image" />
+        <div className="w-full h-full relative flex items-center justify-center">
+          <img className="xl:h-auto xl:w-full sm:h-56 h-20 w-full object-none group-hover:blur-sm duration-500" src={bgsrc} alt="Project background" />
+          <img className="absolute w-full h-auto px-10 group-hover:px-5 duration-500" src={imgsrc} alt="Project thumbnail" />
+        </div>
         <div className="flex flex-col p-5 w-full h-full">
           <h1 className="text-lg font-codecb text-accent-5 m-2">{title}</h1>
           <div className="flex flex-row">
