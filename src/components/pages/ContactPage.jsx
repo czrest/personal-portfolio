@@ -60,7 +60,6 @@ export default function ContactPage() {
             onClick={() => copyToClipboard()}
             onMouseEnter={() => handleTooltipHover()}
             variant="outlined"
-
             size="lg"
             className={`flex items-center group mt-10 ${
               shouldAnimateContact

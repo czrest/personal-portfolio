@@ -64,7 +64,7 @@ export default function SectionHtml() {
             <SectionContainer
               key={section.id}
               ref={sectionRefs.current[section.id - 1]}
-              customClassName={`h-svh w-screen flex items-center justify-center 
+              customClassName={`h-screen w-screen flex items-center justify-center 
               ${section.id >= 6 && currentScene <= 16 ? "bg-black" : ""} 
               ${section.id === 6 ? "rounded-t-3xl" : ""}`}
               shouldAnimate

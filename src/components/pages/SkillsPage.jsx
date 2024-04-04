@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function SkillsPage() {
   const [currentScene] = useAtom(currentSceneAtom);
 
-  const showSkillPage = currentScene >= 15 && currentScene <= 16;
+  const showSkillPage = currentScene >= 14 && currentScene <= 16;
   const exitDirection = currentScene >= 16;
 
   return (

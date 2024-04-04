@@ -11,9 +11,9 @@ export default function ProjectPage({}) {
 
   return (
     <>
-      <div className="h-full w-full px-10 relative items-center flex flex-col">
+      <div className="h-full w-full px-20 relative items-center flex flex-col">
         <h1 className="font-codech text-secondary text-8xl mt-32">PROJECTS</h1>
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 ">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 w-full 2xl:w-fit">
           <div className="grid gap-4">
             <div>
               <ProjectContainer

@@ -51,7 +51,7 @@ export default function TheatreCanvas() {
 
   const [planeLoaded] = useAtom(planeLoadedAtom);
 
-  const showLandingPage = currentPage === 1;
+  const showLandingPage = currentPage <= 1;
   const showSubtitle1 = currentScene >= 2 && currentScene <= 3;
   const showSubtitle2 = currentScene >= 4 && currentScene <= 6;
   const showEducationPage = currentPage === 9;
