@@ -20,7 +20,7 @@ export default function ProjectPage({}) {
                 title={`E-waste Manager`}
                 technologies={["Java", "Firebase", "Android Studio"]}
                 bgsrc={"project-bg-1.png"}
-                imgsrc={'E-wasteProject.png'}
+                imgsrc={'E-wasteProject'}
                 showProject={showProject}
               />
             </div>
@@ -40,7 +40,7 @@ export default function ProjectPage({}) {
                 title={`Personal Tour App`}
                 technologies={["Java", "Firebase", "Android Studio"]}
                 bgsrc={"project-bg-2.png"}
-                imgsrc={'TourAppProject.png'}
+                imgsrc={'TourAppProject'}
                 showProject={showProject}
               />
             </div>

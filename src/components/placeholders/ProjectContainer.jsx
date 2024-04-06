@@ -2,6 +2,15 @@ import ChipsText from "./ChipsText";
 import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import Plus from "../../icons/plus";
+import { useMediaQuery } from "@react-hook/media-query";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+  IconButton,
+} from "@material-tailwind/react";
 
 export default function ProjectContainer({
   technologies,
@@ -12,6 +21,7 @@ export default function ProjectContainer({
   customClassName,
 }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
   const handleMouse = (e) => {
@@ -27,24 +37,33 @@ export default function ProjectContainer({
   };
 
   const { x, y } = mousePosition;
-  
-  const handleClick = ()=>{
-    
+
+  const handleClick = () => {
+    setOpen(!open);
+    console.log(open);
   };
+
+  const isSmallScreen = useMediaQuery("(min-width: 1140px)");
 
   return (
     <>
       <div
-        className={`overflow-hidden cursor-none ${customClassName} h-auto 2xl:max-w-2xl xl:max-w-xl lg:max-w-full rounded-lg object-cover object-center flex flex-col group backdrop-blur-sm duration-500 hover:bg-secondary/20 hover:shadow-xl hover:shadow-secondary/10 ease-in-out  ${
-          showProject ? "opacity-100" : " opacity-0 pointer-events-none"
-        } `}
-        onClick={()=>{}}
+        className={`overflow-hidden cursor-none ${customClassName} h-auto 2xl:max-w-2xl xl:max-w-xl lg:max-w-full rounded-lg object-cover object-center flex flex-col group backdrop-blur-sm duration-500 hover:bg-secondary/20 hover:shadow-xl hover:shadow-secondary/10 ease-in-out`}
+        onClick={handleClick}
         onMouseMove={handleMouse}
         onMouseLeave={reset}
       >
         <div className="w-full h-full relative flex items-center justify-center">
-          <img className="xl:h-auto xl:w-full sm:h-56 h-20 w-full object-none group-hover:blur-sm duration-500" src={bgsrc} alt="Project background" />
-          <img className="absolute w-full h-auto px-10 group-hover:px-5 duration-500" src={imgsrc} alt="Project thumbnail" />
+          <img
+            className="xl:h-auto xl:w-full sm:h-56 h-20 w-full object-none group-hover:blur-sm duration-500"
+            src={bgsrc}
+            alt="Project background"
+          />
+          <img
+            className={`absolute w-full h-full 2xl:px-10 xl:px-10  2xl:object-contain xl:object-contain object-fill 2xl:group-hover:px-5 xl:group-hover:px-5 duration-500`}
+            src={`${isSmallScreen ? imgsrc + ".png" : imgsrc + "Banner.png"}`}
+            alt="Project thumbnail"
+          />
         </div>
         <div className="flex flex-col p-5 w-full h-full">
           <h1 className="text-lg font-codecb text-accent-5 m-2">{title}</h1>
@@ -68,6 +87,26 @@ export default function ProjectContainer({
             />
           </motion.div>
         </div>
+        <Dialog
+          open={open}
+          handler={handleClick}
+          size="xxl"
+          className="bg-black"
+        >
+          <DialogHeader>
+            <h1 className="font-codech text-secondary text-8xl">{title}</h1>
+          </DialogHeader>
+          <DialogBody>
+            <IconButton className="fixed bottom-10 right-10" onClick={handleClick}>
+              <i className="fas fa-heart" />
+            </IconButton>
+            <img
+              alt="nature"
+              className="h-[48rem] w-full rounded-lg object-cover object-center"
+              src={`${isSmallScreen ? imgsrc + ".png" : imgsrc + "Banner.png"}`}
+            />
+          </DialogBody>
+        </Dialog>
       </div>
     </>
   );
