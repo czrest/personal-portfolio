@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import Plus from "../../icons/plus";
 import { useMediaQuery } from "@react-hook/media-query";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import {
   Button,
   Dialog,
@@ -91,21 +93,42 @@ export default function ProjectContainer({
           open={open}
           handler={handleClick}
           size="xxl"
-          className="bg-black"
+          className="bg-black h-[42rem] overflow-scroll"
         >
           <DialogHeader>
             <h1 className="font-codech text-secondary text-8xl">{title}</h1>
           </DialogHeader>
           <DialogBody>
-            <IconButton className="fixed bottom-10 right-10" onClick={handleClick}>
-              <i className="fas fa-heart" />
+            <IconButton
+              className="fixed bottom-10 right-10"
+              onClick={handleClick}
+            >
+              <FontAwesomeIcon icon={faXmark} />
             </IconButton>
             <img
               alt="nature"
               className="h-[48rem] w-full rounded-lg object-cover object-center"
               src={`${isSmallScreen ? imgsrc + ".png" : imgsrc + "Banner.png"}`}
             />
+            <img
+              alt="nature"
+              className="h-[48rem] w-full rounded-lg object-cover object-center"
+              src={`${isSmallScreen ? imgsrc + ".png" : imgsrc + "Banner.png"}`}
+            />
+            <img
+              alt="nature"
+              className="h-[48rem] w-full rounded-lg object-cover object-center"
+              src={`${isSmallScreen ? imgsrc + ".png" : imgsrc + "Banner.png"}`}
+            />
           </DialogBody>
+          <DialogFooter className="space-x-2">
+            <Button variant="text" color="blue-gray" onClick={handleClick}>
+              cancel
+            </Button>
+            <Button variant="gradient" color="green" onClick={handleClick}>
+              confirm
+            </Button>
+          </DialogFooter>
         </Dialog>
       </div>
     </>
