@@ -5,6 +5,8 @@ import Plus from "../../icons/plus";
 import { useMediaQuery } from "@react-hook/media-query";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { PROJECTS } from "../../data";
+
 import {
   Button,
   Dialog,
@@ -16,14 +18,14 @@ import {
 
 export default function ProjectContainer({
   technologies,
-  title,
+  project,
   imgsrc,
   bgsrc,
-  showProject = false,
   customClassName,
 }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [open, setOpen] = useState(false);
+  const [projectData, setProjectData] = useState();
   const ref = useRef(null);
 
   const handleMouse = (e) => {
@@ -41,8 +43,8 @@ export default function ProjectContainer({
   const { x, y } = mousePosition;
 
   const handleClick = () => {
-    setOpen(!open);
-    console.log(open);
+    setProjectData(project);
+    setOpen((prevVal) => !prevVal);
   };
 
   const isSmallScreen = useMediaQuery("(min-width: 1140px)");
@@ -68,7 +70,7 @@ export default function ProjectContainer({
           />
         </div>
         <div className="flex flex-col p-5 w-full h-full">
-          <h1 className="text-lg font-codecb text-accent-5 m-2">{title}</h1>
+          <h1 className="text-lg font-codecb text-accent-5 m-2"></h1>
           <div className="flex flex-row">
             {technologies.map((tech, index) => (
               <ChipsText key={index} value={tech} />
@@ -89,6 +91,8 @@ export default function ProjectContainer({
             />
           </motion.div>
         </div>
+      </div>
+      {projectData && (
         <Dialog
           open={open}
           handler={handleClick}
@@ -96,41 +100,41 @@ export default function ProjectContainer({
           className="bg-black h-[42rem] overflow-scroll"
         >
           <DialogHeader>
-            <h1 className="font-codech text-secondary text-8xl">{title}</h1>
+            <img
+              alt="nature"
+              className="h-[48rem] w-full rounded-lg object-cover object-center"
+              src={`${isSmallScreen ? imgsrc + ".png" : imgsrc + "Banner.png"}`}
+            />
           </DialogHeader>
           <DialogBody>
-            <IconButton
-              className="fixed bottom-10 right-10"
-              onClick={handleClick}
-            >
-              <FontAwesomeIcon icon={faXmark} />
-            </IconButton>
-            <img
-              alt="nature"
-              className="h-[48rem] w-full rounded-lg object-cover object-center"
-              src={`${isSmallScreen ? imgsrc + ".png" : imgsrc + "Banner.png"}`}
-            />
-            <img
-              alt="nature"
-              className="h-[48rem] w-full rounded-lg object-cover object-center"
-              src={`${isSmallScreen ? imgsrc + ".png" : imgsrc + "Banner.png"}`}
-            />
-            <img
-              alt="nature"
-              className="h-[48rem] w-full rounded-lg object-cover object-center"
-              src={`${isSmallScreen ? imgsrc + ".png" : imgsrc + "Banner.png"}`}
-            />
+            <h1 className="font-codech text-secondary text-8xl py-5 mb-10 border-b border-secondary">
+              {PROJECTS[projectData].title}
+            </h1>
+            <div className={`grid grid-cols-2`}>
+              <div className="flex flex-col justify-center">
+                <h2 className="font-codech text-secondary text-3xl">
+                  Description
+                </h2>
+                <p className="text-xl font-codecr">
+                  {PROJECTS[projectData].description}
+                </p>
+              </div>
+            </div>
           </DialogBody>
-          <DialogFooter className="space-x-2">
-            <Button variant="text" color="blue-gray" onClick={handleClick}>
-              cancel
-            </Button>
-            <Button variant="gradient" color="green" onClick={handleClick}>
-              confirm
-            </Button>
+          <DialogFooter className="fixed bottom-0 p-10 w-full space-x-2 pointer-events-none">
+            <IconButton
+              size="lg"
+              onClick={handleClick}
+              className="bg-tertiary duration-500 group pointer-events-auto"
+            >
+              <FontAwesomeIcon
+                icon={faXmark}
+                className="text-white text-3xl group-hover:rotate-180 duration-300"
+              />
+            </IconButton>
           </DialogFooter>
         </Dialog>
-      </div>
+      )}
     </>
   );
 }

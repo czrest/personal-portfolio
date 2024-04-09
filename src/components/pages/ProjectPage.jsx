@@ -17,7 +17,7 @@ export default function ProjectPage({}) {
           <div className="grid gap-4">
             <div>
               <ProjectContainer
-                title={`E-waste Manager`}
+                project={`EwasteManager`}
                 technologies={["Java", "Firebase", "Android Studio"]}
                 bgsrc={"project-bg-1.png"}
                 imgsrc={'E-wasteProject'}
@@ -26,7 +26,7 @@ export default function ProjectPage({}) {
             </div>
             <div>
               <ProjectContainer
-                title={`E-waste Manager`}
+                project={`Animations&&3D`}
                 technologies={["Java", "Firebase", "Android Studio"]}
                 bgsrc={"project-bg-3.png"}
                 imgsrc={''}
@@ -37,7 +37,7 @@ export default function ProjectPage({}) {
           <div className="grid gap-4">
             <div>
               <ProjectContainer
-                title={`Personal Tour App`}
+                project={`PersonalTourApp`}
                 technologies={["Java", "Firebase", "Android Studio"]}
                 bgsrc={"project-bg-2.png"}
                 imgsrc={'TourAppProject'}
@@ -46,7 +46,7 @@ export default function ProjectPage({}) {
             </div>
             <div>
               <ProjectContainer
-                title={`E-waste Manager`}
+                project={`FreelanceWorks`}
                 technologies={["Java", "Firebase", "Android Studio"]}
                 bgsrc={"project-bg-4.png"}
                 imgsrc={''}
