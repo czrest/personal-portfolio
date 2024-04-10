@@ -24,8 +24,8 @@ export default function ProjectContainer({
   customClassName,
 }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [open, setOpen] = useState(false);
   const [projectData, setProjectData] = useState();
+  const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
   const handleMouse = (e) => {
@@ -102,22 +102,36 @@ export default function ProjectContainer({
           <DialogHeader>
             <img
               alt="nature"
-              className="h-[48rem] w-full rounded-lg object-cover object-center"
-              src={`${isSmallScreen ? imgsrc + ".png" : imgsrc + "Banner.png"}`}
+              className="h-auto w-full rounded-lg object-cover object-center"
+              src={PROJECTS[projectData].coverImage}
             />
           </DialogHeader>
           <DialogBody>
             <h1 className="font-codech text-secondary text-8xl py-5 mb-10 border-b border-secondary">
               {PROJECTS[projectData].title}
             </h1>
-            <div className={`grid grid-cols-2`}>
-              <div className="flex flex-col justify-center">
-                <h2 className="font-codech text-secondary text-3xl">
+            <div className={`grid grid-cols-2 gap-28`}>
+              <div className="flex flex-col">
+                <h2 className="font-codecb text-secondary text-md uppercase">
                   Description
                 </h2>
-                <p className="text-xl font-codecr">
+                <p className="text-xl font-codech">
                   {PROJECTS[projectData].description}
                 </p>
+              </div>
+              <div className="grid grid-flow-row-dense gap-5">
+                <div>
+                  <h2 className="font-codecb text-secondary text-md uppercase">Role</h2>
+                  {PROJECTS[projectData].role.map((roles, index) => (
+                    <p className="text-xl font-codech" key={index}>{roles}</p>
+                  ))}
+                </div>
+                <div>
+                  <h2 className="font-codecb text-secondary text-md uppercase">Technologies</h2>
+                  {PROJECTS[projectData].technologies.map((tech, index) => (
+                    <p className="text-xl font-codech" key={index}>{tech}</p>
+                  ))}
+                </div>
               </div>
             </div>
           </DialogBody>

@@ -22,14 +22,17 @@ export const PROJECTS = {
     title: "E-waste Manager",
     description:
       "E-waste Manager is an android application aimed at promoting responsible disposal of electronic waste(e-waste) and raising awareness about its environmental impact.",
-    role: "Full-stack",
-    coverImage: "",
+    role: ["Full-stack Developer", "UI/UX Designer", "Logo Design", "Motion Design"],
+    technologies: ["Java", "Firebase", "Android Studio"],
+    coverImage: "E-wasteProjectBannerHD.png",
     galery: "",
   },
   PersonalTourApp: {
     title: "Personal Tour App",
     description: "Personal tour app is an android application featuring personalized Ilocos tour destinations and dining options, organized for user convenience. Each destination within the app redirects users to Google Maps for accurate location and faster navigation.",
-    coverImage: "",
+    role: ["Full-stack Developer", "UI/UX Designer"],
+    technologies: ["Java", "Firebase", "Android Studio"],
+    coverImage: "TourAppProjectBannerHD.png",
     galery: "",
   },
 };
