@@ -121,7 +121,7 @@ export default function ProjectContainer({
               </div>
             </div>
           </DialogBody>
-          <DialogFooter className="fixed bottom-0 p-10 w-full space-x-2 pointer-events-none">
+          <DialogFooter className="fixed bottom-0 p-10 w-full pointer-events-none">
             <IconButton
               size="lg"
               onClick={handleClick}

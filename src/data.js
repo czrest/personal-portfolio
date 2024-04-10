@@ -22,7 +22,7 @@ export const PROJECTS = {
     title: "E-waste Manager",
     description:
       "E-waste Manager is an android application aimed at promoting responsible disposal of electronic waste(e-waste) and raising awareness about its environmental impact.",
-    work: "",
+    role: "Full-stack",
     coverImage: "",
     galery: "",
   },
