@@ -121,19 +121,36 @@ export default function ProjectContainer({
               </div>
               <div className="grid grid-flow-row-dense gap-5">
                 <div>
-                  <h2 className="font-codecb text-secondary text-md uppercase">Role</h2>
+                  <h2 className="font-codecb text-secondary text-md uppercase">
+                    Role
+                  </h2>
                   {PROJECTS[projectData].role.map((roles, index) => (
-                    <p className="text-xl font-codech" key={index}>{roles}</p>
+                    <p className="text-xl font-codech" key={index}>
+                      {roles}
+                    </p>
                   ))}
                 </div>
                 <div>
-                  <h2 className="font-codecb text-secondary text-md uppercase">Technologies</h2>
+                  <h2 className="font-codecb text-secondary text-md uppercase">
+                    Technologies
+                  </h2>
                   {PROJECTS[projectData].technologies.map((tech, index) => (
-                    <p className="text-xl font-codech" key={index}>{tech}</p>
+                    <p className="text-xl font-codech" key={index}>
+                      {tech}
+                    </p>
                   ))}
                 </div>
               </div>
             </div>
+
+            {PROJECTS[projectData].galery.map((imgs, index) => (
+              <img
+                key={index}
+                alt={`gallery ${index}`}
+                className="h-auto w-full rounded-lg object-cover object-center"
+                src={imgs}
+              />
+            ))}
           </DialogBody>
           <DialogFooter className="fixed bottom-0 p-10 w-full pointer-events-none">
             <IconButton

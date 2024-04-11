@@ -25,7 +25,7 @@ export const PROJECTS = {
     role: ["Full-stack Developer", "UI/UX Designer", "Logo Design", "Motion Design"],
     technologies: ["Java", "Firebase", "Android Studio"],
     coverImage: "E-wasteProjectBannerHD.png",
-    galery: "",
+    galery: ["E-wasteProjectHD.png"],
   },
   PersonalTourApp: {
     title: "Personal Tour App",
@@ -33,6 +33,6 @@ export const PROJECTS = {
     role: ["Full-stack Developer", "UI/UX Designer"],
     technologies: ["Java", "Firebase", "Android Studio"],
     coverImage: "TourAppProjectBannerHD.png",
-    galery: "",
+    galery: ["TourAppProjectHD.png"],
   },
 };
