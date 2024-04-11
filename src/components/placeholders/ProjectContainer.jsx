@@ -110,7 +110,7 @@ export default function ProjectContainer({
             <h1 className="font-codech text-secondary text-8xl py-5 mb-10 border-b border-secondary">
               {PROJECTS[projectData].title}
             </h1>
-            <div className={`grid grid-cols-2 gap-28`}>
+            <div className={`grid grid-cols-2 gap-28 mb-20`}>
               <div className="flex flex-col">
                 <h2 className="font-codecb text-secondary text-md uppercase">
                   Description
@@ -142,15 +142,16 @@ export default function ProjectContainer({
                 </div>
               </div>
             </div>
-
-            {PROJECTS[projectData].galery.map((imgs, index) => (
-              <img
-                key={index}
-                alt={`gallery ${index}`}
-                className="h-auto w-full rounded-lg object-cover object-center"
-                src={imgs}
-              />
-            ))}
+            <div className={`grid grid-cols-2 gap-4`}>
+              {PROJECTS[projectData].galery.map((imgs, index) => (
+                <img
+                  key={index}
+                  alt={`gallery ${index}`}
+                  className={`h-auto w-full rounded-lg object-cover object-center ${(index - 2) % 5 === 0 ? 'col-span-2' : ''}`}
+                  src={imgs}
+                />
+              ))}
+            </div>
           </DialogBody>
           <DialogFooter className="fixed bottom-0 p-10 w-full pointer-events-none">
             <IconButton

@@ -25,7 +25,7 @@ export const PROJECTS = {
     role: ["Full-stack Developer", "UI/UX Designer", "Logo Design", "Motion Design"],
     technologies: ["Java", "Firebase", "Android Studio"],
     coverImage: "E-wasteProjectBannerHD.png",
-    galery: ["E-wasteProjectHD.png"],
+    galery: ["E-wasteManagerLogo-2023.png", "E-wasteManagerLogoDark-2023.png", "E-wasteProjectHD.png", "E-wasteLoadingLottieAnim.gif", "E-wasteProjectHD.png", "E-wasteProjectHD.png", "E-wasteProjectHD.png", "E-wasteProjectHD.png", "E-wasteProjectHD.png", "E-wasteProjectHD.png", "E-wasteProjectHD.png", "E-wasteProjectHD.png", "E-wasteProjectHD.png"],
   },
   PersonalTourApp: {
     title: "Personal Tour App",
