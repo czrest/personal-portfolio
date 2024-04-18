@@ -12852,17 +12852,17 @@
                     "value": 177.36939669935205
                   },
                   {
-                    "id": "iF7adJ8wUX",
+                    "id": "JLy5If9TuA",
                     "position": 19.767,
                     "connectedRight": true,
                     "handles": [
-                      0.98,
-                      0.335,
+                      0.5,
+                      1,
                       0.5,
                       0
                     ],
                     "type": "bezier",
-                    "value": 216.88412693724501
+                    "value": 203.71412693724494
                   }
                 ]
               },
@@ -15314,6 +15314,7 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "Idujc9KC4R-9HdzK",
     "wAfRt067KiBxikH8",
     "l8xPRp2pGXoqZW4b",
     "gW0iEmhZP4jYGYqK",

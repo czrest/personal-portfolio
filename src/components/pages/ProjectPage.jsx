@@ -18,18 +18,12 @@ export default function ProjectPage({}) {
             <div>
               <ProjectContainer
                 project={`EwasteManager`}
-                technologies={["Java", "Firebase", "Android Studio"]}
-                bgsrc={"project-bg-1.png"}
-                imgsrc={'E-wasteProject'}
                 showProject={showProject}
               />
             </div>
             <div>
               <ProjectContainer
-                project={`Animations&&3D`}
-                technologies={["Java", "Firebase", "Android Studio"]}
-                bgsrc={"project-bg-3.png"}
-                imgsrc={''}
+                project={`Journey3D`}
                 showProject={showProject}
               />
             </div>
@@ -38,18 +32,12 @@ export default function ProjectPage({}) {
             <div>
               <ProjectContainer
                 project={`PersonalTourApp`}
-                technologies={["Java", "Firebase", "Android Studio"]}
-                bgsrc={"project-bg-2.png"}
-                imgsrc={'TourAppProject'}
                 showProject={showProject}
               />
             </div>
             <div>
               <ProjectContainer
                 project={`FreelanceWorks`}
-                technologies={["Java", "Firebase", "Android Studio"]}
-                bgsrc={"project-bg-4.png"}
-                imgsrc={''}
                 showProject={showProject}
               />
             </div>

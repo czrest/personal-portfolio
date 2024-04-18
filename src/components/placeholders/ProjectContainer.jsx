@@ -8,7 +8,6 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { PROJECTS } from "../../data";
 
 import {
-  Button,
   Dialog,
   DialogHeader,
   DialogBody,
@@ -17,14 +16,10 @@ import {
 } from "@material-tailwind/react";
 
 export default function ProjectContainer({
-  technologies,
   project,
-  imgsrc,
-  bgsrc,
   customClassName,
 }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [projectData, setProjectData] = useState();
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
@@ -43,7 +38,6 @@ export default function ProjectContainer({
   const { x, y } = mousePosition;
 
   const handleClick = () => {
-    setProjectData(project);
     setOpen((prevVal) => !prevVal);
   };
 
@@ -60,19 +54,19 @@ export default function ProjectContainer({
         <div className="w-full h-full relative flex items-center justify-center">
           <img
             className="xl:h-auto xl:w-full sm:h-56 h-20 w-full object-none group-hover:blur-sm duration-500"
-            src={bgsrc}
+            src={PROJECTS[project].thumbnailBG}
             alt="Project background"
           />
           <img
             className={`absolute w-full h-full 2xl:px-10 xl:px-10  2xl:object-contain xl:object-contain object-fill 2xl:group-hover:px-5 xl:group-hover:px-5 duration-500`}
-            src={`${isSmallScreen ? imgsrc + ".png" : imgsrc + "Banner.png"}`}
+            src={`${isSmallScreen ? PROJECTS[project].thumbnailImg + ".png" : PROJECTS[project].thumbnailImg + "Banner.png"}`}
             alt="Project thumbnail"
           />
         </div>
         <div className="flex flex-col p-5 w-full h-full">
           <h1 className="text-lg font-codecb text-accent-5 m-2"></h1>
           <div className="flex flex-row">
-            {technologies.map((tech, index) => (
+            {PROJECTS[project].technologies.map((tech, index) => (
               <ChipsText key={index} value={tech} />
             ))}
           </div>
@@ -92,7 +86,7 @@ export default function ProjectContainer({
           </motion.div>
         </div>
       </div>
-      {projectData && (
+      {project && (
         <Dialog
           open={open}
           handler={handleClick}
@@ -103,12 +97,12 @@ export default function ProjectContainer({
             <img
               alt="nature"
               className="h-auto w-full rounded-lg object-cover object-center"
-              src={PROJECTS[projectData].coverImage}
+              src={PROJECTS[project].coverImage}
             />
           </DialogHeader>
           <DialogBody>
             <h1 className="font-codech text-secondary text-8xl py-5 mb-10 border-b border-secondary">
-              {PROJECTS[projectData].title}
+              {PROJECTS[project].title}
             </h1>
             <div className={`grid grid-cols-2 gap-28 mb-20`}>
               <div className="flex flex-col">
@@ -116,7 +110,7 @@ export default function ProjectContainer({
                   Description
                 </h2>
                 <p className="text-xl font-codech">
-                  {PROJECTS[projectData].description}
+                  {PROJECTS[project].description}
                 </p>
               </div>
               <div className="grid grid-flow-row-dense gap-5">
@@ -124,7 +118,7 @@ export default function ProjectContainer({
                   <h2 className="font-codecb text-secondary text-md uppercase">
                     Role
                   </h2>
-                  {PROJECTS[projectData].role.map((roles, index) => (
+                  {PROJECTS[project].role.map((roles, index) => (
                     <p className="text-xl font-codech" key={index}>
                       {roles}
                     </p>
@@ -134,7 +128,7 @@ export default function ProjectContainer({
                   <h2 className="font-codecb text-secondary text-md uppercase">
                     Technologies
                   </h2>
-                  {PROJECTS[projectData].technologies.map((tech, index) => (
+                  {PROJECTS[project].technologies.map((tech, index) => (
                     <p className="text-xl font-codech" key={index}>
                       {tech}
                     </p>
@@ -143,14 +137,29 @@ export default function ProjectContainer({
               </div>
             </div>
             <div className={`grid grid-cols-2 gap-4`}>
-              {PROJECTS[projectData].galery.map((imgs, index) => (
-                <img
-                  key={index}
-                  alt={`gallery ${index}`}
-                  className={`h-auto w-full rounded-lg object-cover object-center ${(index - 2) % 5 === 0 ? 'col-span-2' : ''}`}
-                  src={imgs}
-                />
-              ))}
+              {PROJECTS[project].gallery.map((item, index) => {
+                const isVideo = item.endsWith(".mp4");
+                const isVertical = item.endsWith("Vertical.png") || item.endsWith("Vertical.mp4") ;
+                const isHorizontal = item.endsWith("Horizontal.png") || item.endsWith("Horizontal.mp4") ;
+                return isVideo ? (
+                  <video
+                    key={index}
+                    loop
+                    autoPlay
+                    className={`h-auto w-full rounded-lg object-cover object-center ${isVertical ? "row-span-2 h-full" : "h-auto"} ${isHorizontal ? "col-span-2" : ""}`}
+                  >
+                    <source src={item} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img
+                    key={index}
+                    alt={`gallery ${index}`}
+                    className={`w-full rounded-lg object-cover object-center ${isVertical ? "row-span-2 h-full" : "h-auto"} ${isHorizontal ? "col-span-2" : ""}`}
+                    src={item}
+                  />
+                );
+              })}
             </div>
           </DialogBody>
           <DialogFooter className="fixed bottom-0 p-10 w-full pointer-events-none">
