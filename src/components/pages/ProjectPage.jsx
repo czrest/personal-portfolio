@@ -37,7 +37,7 @@ export default function ProjectPage({}) {
             </div>
             <div>
               <ProjectContainer
-                project={`FreelanceWorks`}
+                project={`CreativePortfolio`}
                 showProject={showProject}
               />
             </div>

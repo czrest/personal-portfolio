@@ -41,7 +41,7 @@ export const PROJECTS = {
   },
   Journey3D: {
     title: "3D Journey",
-    description: "A collection of experimental 3D web projects created with Three.js, reflecting my enthusiasm for leveraging 3D and WebGL technologies to create immersive experiences. Each project showcases my exploration of 3D design on the web, serving as a reference for future projects and aiming to engage users with lasting impressions.",
+    description: "A collection of experimental 3D web projects created with Three.js, showing my interest in utilizing 3D and WebGL technologies to create immersive experiences. Each project showcases my exploration of 3D design on the web, serving as a reference for future projects and aiming to engage users with lasting impressions.",
     role: ["Creative Developer", "3D Artist"],
     technologies: ["Blender", "Three.JS"],
     thumbnailImg: "3DJourney",
@@ -49,14 +49,14 @@ export const PROJECTS = {
     coverImage: "3DJourneyBannerHD.png",
     gallery: ["3DJourneyHDHorizontal.mp4", "3DJourneyWeb01Horizontal.mp4", "3DJourney01.png", "3DJourney06.png", "3DJourney03.png", "3DJourney04.png", "3DJourney02.png", "3DJourney05.png", "3DJourneyWeb02Horizontal.mp4", "3DJourney07Horizontal.png"],
   },
-  FreelanceWorks: {
-    title: "3D Journey",
-    description: "A collection of experimental 3D web projects created with Three.js, reflecting my enthusiasm for leveraging 3D and WebGL technologies to create immersive experiences. Each project showcases my exploration of 3D design on the web, serving as a reference for future projects and aiming to engage users with lasting impressions.",
-    role: ["Creative Developer", "3D Artist"],
-    technologies: ["Blender", "Three.JS"],
-    thumbnailImg: "",
+  CreativePortfolio: {
+    title: "Creative Works",
+    description: "A collection of some of my work as a visual artist. I've been very active and enthusiastic about visual art, gaining diverse skills through freelancing. These skills include photography, photo manipulation, video editing, logo designing, and 3D product modeling, which I utilize for my creative process. These experiences have helped me improve my problem-solving abilities creatively and innovatively.",
+    role: ["Graphic Designer"],
+    technologies: ["Adobe Creative", "Blender"],
+    thumbnailImg: "CreativeWorks",
     thumbnailBG: "project-bg-4.png",
-    coverImage: "3DJourneyBannerHD.png",
-    gallery: ["3DJourneyHDHorizontal.mp4", "3DJourneyWeb01Horizontal.mp4", "3DJourney01.png", "3DJourney06.png", "3DJourney03.png", "3DJourney04.png", "3DJourney02.png", "3DJourney05.png", "3DJourneyWeb02Horizontal.mp4"],
+    coverImage: "CreativeWorksBannerHD.png",
+    gallery: ["CreativeWorks01.png", "CreativeWorks02.png", "CreativeWorks03Vertical.png"],
   },
 };

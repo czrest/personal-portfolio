@@ -96,7 +96,7 @@ export default function ProjectContainer({
           <DialogHeader>
             <img
               alt="nature"
-              className="h-auto w-full rounded-lg object-cover object-center"
+              className="h-max w-full rounded-lg object-cover object-center"
               src={PROJECTS[project].coverImage}
             />
           </DialogHeader>
