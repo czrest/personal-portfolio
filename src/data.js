@@ -57,6 +57,6 @@ export const PROJECTS = {
     thumbnailImg: "CreativeWorks",
     thumbnailBG: "project-bg-4.png",
     coverImage: "CreativeWorksBannerHD.png",
-    gallery: ["CreativeWorks01.png", "CreativeWorks02.png", "CreativeWorks03Vertical.png"],
+    gallery: [ "CreativeWorks01.png", "CreativeWorks02Vertical.png", "CreativeWorks03.png", "CreativeWorks04Horizontal.png", "CreativeWorks05Horizontal.png", "CreativeWorks06.png", "CreativeWorks07.png", "CreativeWorks08Vertical.png", "CreativeWorks09Vertical.png", "CreativeWorks10.png", "CreativeWorks11.png", "CreativeWorks12Horizontal.png", "CreativeWorks13.png", "CreativeWorks14.png", "CreativeWorks15.png", "CreativeWorks16.png"],
   },
 };
