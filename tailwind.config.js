@@ -7,9 +7,6 @@ module.exports = withMT({
   ],
   theme: {
     extend: {
-      height: {
-        '7/100': '7%',
-      },
       fontFamily: {
         codecl: ['codecl', 'sans'],
         codecr: ['codecr', 'sans'],

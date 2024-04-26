@@ -3,18 +3,26 @@ import {
   useAnimations,
   Wireframe,
   useScroll,
+  Html,
 } from "@react-three/drei";
 import { editable as e } from "@theatre/r3f";
 import { useAtom } from "jotai";
 import { useFrame } from "@react-three/fiber";
 
-import { currentSceneAtom, planeLoadedAtom } from "../GlobalState";
+import {
+  currentSceneAtom,
+  planeLoadedAtom,
+  currentPageAtom,
+  currentProgressAtom
+} from "../GlobalState";
 import { useEffect, useState } from "react";
 import WireframeOpt from "../components/WireframeOpt";
 
 const Paper = () => {
   const scroll = useScroll();
   const [currentScene] = useAtom(currentSceneAtom);
+  const [currentPage] = useAtom(currentPageAtom);
+  const [currentProgress] = useAtom(currentProgressAtom);
   const [, setPlaneLoaded] = useAtom(planeLoadedAtom);
   const [strokeOpacity, setStrokeOpacity] = useState(0);
   const [fillOpacity, setFillOpacity] = useState(0);
@@ -84,6 +92,10 @@ const Paper = () => {
     return animateOpacity(setFillOpacity, targetValue, step, minValue);
   }, [currentScene]);
 
+  const showHtml = currentPage >= 2 && currentPage <= 3;
+  const showText1 = currentProgress <= 84 && currentProgress >= 80 ;
+  const showText2 = currentProgress <= 79 && currentProgress >= 76;
+
   return (
     <>
       <e.mesh
@@ -104,6 +116,40 @@ const Paper = () => {
             thickness={thickness}
           />
         </skinnedMesh>
+        {showHtml && (
+          <>
+            <Html
+              distanceFactor={0}
+              position={[-5, -1, 6]}
+              transform
+              portal={{ current: scroll.fixed }}
+              sprite
+            >
+              <p
+                className={`font-codecl text-xs border border-accent-1 px-2 ${
+                  showText1 ? "opacity-100" : "opacity-0"
+                } duration-75 `}
+              >
+                Hey there!
+              </p>
+            </Html>
+            <Html
+              distanceFactor={0}
+              position={[-6, 2, -2.5]}
+              transform
+              portal={{ current: scroll.fixed }}
+              sprite
+            >
+              <p
+                className={`font-codecl text-xs border border-accent-1 px-2 ${
+                  showText2 ? "opacity-100" : "opacity-0"
+                } duration-75 `}
+              >
+                Hey there!
+              </p>
+            </Html>
+          </>
+        )}
       </e.mesh>
     </>
   );
